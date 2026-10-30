@@ -1,0 +1,274 @@
+ID,Ethnicity_Catagory,Ethnicity_Quest,Gender,Age,Age_Range,Wash_Freq of BB (# times per week),Wash_Range,Innie_or_outie,Country til age 12,ZIP code til age 12,Country ages 13-19,Zipcode ages 13-19,Current ZIPcode,Current City,Current State,Reads
+1153,non-Hispanic White,Caucasian,Female,18,8 to 18,Unknown,Unknown,Innie ,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1161,non-Hispanic White,Caucasian,Male,28,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1169,Indian,Indian,Male,7,0 to 7,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,FairFax,VA,1000
+979,Unknown,Unknown,Female,35,19 to 35,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Durham,NC,1000
+1113,non-Hispanic Black,African American,Female,8,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Conway,NC,1000
+1121,Unknown,Unknown,Female,12,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Louisburg,NC,1000
+1145,non-Hispanic White,Caucasian,Male,35,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Chapel Hill,NC,1000
+1154,non-Hispanic White,Caucasian,Female,23,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Chapel Hill,NC,1000
+1162,Unknown,Unknown,Female,36,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Plantation,FL,1000
+1170,Indian,Indian,Male,44,36 to 74,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,FairFax,VA,1000
+980,non-Hispanic White,Caucasian,Female,52,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+988,non-Hispanic White,Caucasian,Female,59,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1106,non-Hispanic White,Caucasian,Male,74,36 to 74,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Stanford,CT,1000
+1114,non-Hispanic Black,African American/Caucasian,Female,3,0 to 7,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Greensboro,NC,1000
+1122,Hispanic,Multi,Female,15,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Louisburg,NC,1000
+1138,Hispanic,Hispanic,Male,10,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Durham,NC,1000
+1146,Asian,Eurasian,Male,25,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1163,non-Hispanic Black,African American,Female,14,8 to 18,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1171,non-Hispanic White,Caucasian,Male,18,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Wake Forest,NC,1000
+981,non-Hispanic White,Caucasian,Female,44,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Chapel Hill,NC,1000
+1107,non-Hispanic White,Caucasian,Female,62,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1123,non-Hispanic White,Caucasian,Male,8,8 to 18,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Greensboro,NC,1000
+1147,non-Hispanic White,Caucasian,Male,24,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1156,non-Hispanic White,Caucasian,Female,23,19 to 35,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Saratoga,CA,1000
+1164,non-Hispanic White,Caucasian,Female,13,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Zebulon,NC,1000
+1599,non-Hispanic White,Caucasian,Male,35,19 to 35,0,none,Innie,usa,97374,usa,97374,,Unknown,NC,1000
+1172,Asian,Asian,Female,42,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,FairFax,VA,1000
+982,non-Hispanic White,Caucasian,Male,40,36 to 74,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Chapel Hill,NC,1000
+1108,non-Hispanic White,Caucasian,Female,42,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Poquson,VA,1000
+1116,non-Hispanic Black,African American/Caucasian,Female,17,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,North Wilkesboro,NC,1000
+1124,non-Hispanic White,Caucasian,Female,28,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Durham,NC,1000
+1132,Hispanic,Latin,Male,60,36 to 74,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Victoria,BC,1000
+1140,Hispanic,Hispanic,Male,42,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Durham,NC,1000
+1148,non-Hispanic White,Caucasian,Male,26,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Saratoga,CA,1000
+1165,Unknown,Unknown,Male,1,0 to 7,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1173,non-Hispanic White,Caucasian,Male,29,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1109,non-Hispanic White,Caucasian,Male,23,19 to 35,Unknown,Unknown,Innie ,Unknown,Unknown,Unknown,Unknown,Unknown,Boston,MA,1000
+1117,non-Hispanic White,Caucasian,Female,30,19 to 35,Unknown,Unknown,Innie,usa,54166,usa,54166,,Raleigh,NC,1000
+1133,non-Hispanic White,Caucasian,Female,60,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Charlotte,NC,1000
+1141,non-Hispanic White,Irish,Male,32,19 to 35,Unknown,Unknown,Outie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1149,non-Hispanic White,Caucasian,Female,18,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1158,non-Hispanic White,Caucasian,Female,44,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1166,non-Hispanic White,Caucasian,Male,20,19 to 35,Unknown,Unknown,Outie,Unknown,Unknown,Unknown,Unknown,Unknown,Durham,NC,1000
+1174,Unknown,Unknown,Male,74,36 to 74,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Durham,NC,1000
+1102,non-Hispanic White,Caucasian,Female,6,0 to 7,Unknown,Unknown,Outie,Unknown,Unknown,Unknown,Unknown,Unknown,Cape Carteret,NC,1000
+1110,Unknown,Unknown,Female,23,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Washington,DC,1000
+1134,non-Hispanic White,Caucasian,Male,27,19 to 35,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Carboro,NC,1000
+1142,Hispanic,Hispanic,Male,24,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Crp Chris,TX,1000
+1150,non-Hispanic White,Caucasian,Male,59,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1159,non-Hispanic White,Caucasian,Female,40,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1167,non-Hispanic White,Caucasian,Male,21,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Fort Bragg,NC,1000
+1175,non-Hispanic White,Caucasian,Female,18,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Wake Forest,NC,1000
+965,non-Hispanic White,European,Female,37,36 to 74,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Durham,NC,1000
+985,non-Hispanic White,Irish,Male,12,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Garner,NC,1000
+1127,non-Hispanic White,Caucasian,Male,35,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Chapel Hill,NC,1000
+1135,non-Hispanic White,Caucasian,Female,36,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Carboro,NC,1000
+1143,Hispanic,Hispanic,Male,29,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1151,non-Hispanic White,Caucasian,Female,19,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1160,non-Hispanic White,Caucasian,Female,30,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Greenville,NC,1000
+1168,non-Hispanic White,Caucasian,Female,18,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Fort Bragg,NC,1000
+1176,Unknown,Unknown,Female,24,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1104,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,1000
+1112,non-Hispanic White,Caucasian,Male,35,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Cary,NC,1000
+1120,non-Hispanic White,Caucasian,Female,38,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Louisburg,NC,1000
+1128,non-Hispanic White,Caucasian,Female,1,0 to 7,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Chapel Hill,NC,1000
+1144,non-Hispanic White,Caucasian,Female,31,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Chapel Hill,NC,1000
+1152,non-Hispanic White,Caucasian,Female,19,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1324,Unknown,Unknown,Male,13,8 to 18,Unknown,Unknown,Outie,Unknown,Unknown,Unknown,Unknown,Unknown,New Bern,NC,1000
+1332,Unknown,Unknown,Male,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,SC,1000
+1340,non-Hispanic White,Caucasian,Male,14,8 to 18,2,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Lexington,NC,1000
+1184,Asian,Asian,Female,27,19 to 35,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1193,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,1000
+1201,Unknown,Unknown,Female,28,19 to 35,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,NC,1000
+1247,non-Hispanic White,Caucasian,Female,4,0 to 7,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Atlanta,GA,1000
+1261,non-Hispanic White,Caucasian,Female,46,36 to 74,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Clinton,NC,1000
+1271,Hispanic,Hispanic,Male,11,8 to 18,7,7 days a week,Outie,Unknown,Unknown,Unknown,Unknown,Unknown,Clinton,NC,1000
+1325,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,1000
+1333,non-Hispanic White,Caucasian,Female,36,36 to 74,14,More than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Ayden,NC,1000
+1177,Asian,Asian,Male,2,0 to 7,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,FairFax,VA,1000
+1185,Asian,Asian,Female,4,0 to 7,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1194,non-Hispanic White,Caucasian,Male,4,0 to 7,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Chapel Hill,NC,1000
+1202,Asian,Asian,Male,27,19 to 35,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1249,non-Hispanic White,Caucasian,Female,41,36 to 74,1,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1262,non-Hispanic White,Caucasian,Male,46,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,NC,1000
+1272,non-Hispanic White,Caucasian,Male,51,36 to 74,2,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,1000
+1306,non-Hispanic White,Caucasian,Female,37,36 to 74,5,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1317,Hispanic,Hispanic,Female,4,0 to 7,5,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Cary,NC,1000
+1334,Hispanic,Mexican,Female,34,19 to 35,1,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Southern Pines,NC,1000
+1178,non-Hispanic White,Caucasian,Female,23,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Durham,NC,1000
+1342,non-Hispanic White,Caucasian,Male,33,19 to 35,4,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Lexington,NC,1000
+1263,non-Hispanic White,Caucasian,Female,48,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,NC,1000
+1335,non-Hispanic White,Caucasian,Male,8,8 to 18,5,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Vass,NC,1000
+1179,Hispanic,Hispanic,Female,17,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1343,non-Hispanic White,Caucasian,Female,35,19 to 35,7,7 days a week,Outie,Unknown,Unknown,Unknown,Unknown,Unknown,Lexington,NC,1000
+1251,non-Hispanic White,Caucasian,Female,44,36 to 74,0,none,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,New Bern,NC,1000
+1311,non-Hispanic White,Caucasian,Male,31,19 to 35,0,none,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1336,non-Hispanic White,Caucasian,Female,10,8 to 18,4,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Apex,NC,1000
+1180,non-Hispanic Black,African American,Male,17,8 to 18,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1344,Unknown,Unknown,Female,13,8 to 18,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,1000
+1197,Hispanic,Hispanic,Female,44,36 to 74,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,1000
+1240,non-Hispanic White,Caucasian,Female,9,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Mount Holly,NC,1000
+1267,non-Hispanic White,Caucasian,Male,4,0 to 7,7,7 days a week,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,SmithField,NC,1000
+1312,non-Hispanic White,Caucasian,Female,35,19 to 35,0,none,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1320,Unknown,Unknown,Male,9,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,1000
+1337,Unknown,Unknown,Female,11,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1181,non-Hispanic White,Caucasian,Male,18,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1345,non-Hispanic White,Caucasian,Male,49,36 to 74,0,none,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1241,non-Hispanic White,Caucasian,Male,5,0 to 7,3,Less than 7,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1338,non-Hispanic White,Caucasian,Female,45,36 to 74,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Apex,NC,1000
+1182,non-Hispanic White,Caucasian,Female,23,19 to 35,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1191,non-Hispanic White,Caucasian,Female,27,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1256,non-Hispanic White,Caucasian,Male,0,0 to 7,7,7 days a week,Outie,Unknown,Unknown,Unknown,Unknown,Unknown,SmithField,NC,1000
+1314,non-Hispanic White,Caucasian,Male,10,8 to 18,1,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Clayton,NC,1000
+1322,Unknown,Unknown,Female,13,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,1000
+1183,non-Hispanic White,Caucasian,Female,28,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Durham,NC,1000
+YWL1161,non-Hispanic White,Caucasian,Male,32,19 to 35,0,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,94704,Sacramento,CA,1000
+1192,non-Hispanic White,Caucasian,Male,13,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,SanFord,NC,1000
+1257,non-Hispanic White,Caucasian,Female,47,36 to 74,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Chapel Hill,NC,1000
+1270,Hispanic,Hispanic,Male,11,8 to 18,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Clinton,NC,1000
+1304,non-Hispanic White,Caucasian,Female,7,0 to 7,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Wake Forest ,NC,1000
+1315,non-Hispanic White,Caucasian,Male,7,0 to 7,1,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Clayton,NC,1000
+1496,non-Hispanic White,Caucasian,Male,34,19 to 35,0,none,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Chapel Hill,NC,1000
+1355,non-Hispanic White,Caucasian,Female,63,36 to 74,"3,5",Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1363,non-Hispanic White,Caucasian,Male,10,8 to 18,4,Less than 7,Outie,Unknown,Unknown,Unknown,Unknown,Unknown,Cary,NC,1000
+1371,non-Hispanic White,Caucasian,Female,43,36 to 74,2,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1397,Hispanic,Hispanic,Female,33,19 to 35,3,Less than 7,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1405,Latino,Caucasian/Latino,Male,15,8 to 18,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Fayetteville,NC,1000
+1419,non-Hispanic White,Caucasian,Male,23,19 to 35,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1435,non-Hispanic Black,African American,Male,20,19 to 35,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1498,non-Hispanic White,Caucasian,Female,27,19 to 35,0,none,Innie,usa,27511,usa,27502,,Raleigh,NC,1000
+1538,non-Hispanic White,Caucasian,Male,35,19 to 35,0,none,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,NC,1000
+1348,Hispanic,Spanish,Male,31,19 to 35,1,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Cary,NC,1000
+1364,non-Hispanic White,Caucasian,Male,10,8 to 18,4,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Cary,NC,1000
+1372,non-Hispanic White,Caucasian,Female,59,36 to 74,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1406,Unknown,Unknown,Male,50,36 to 74,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Fayetteville,NC,1000
+1428,non-Hispanic White,Caucasian,Male,9,8 to 18,2,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Garner,NC,1000
+1436,non-Hispanic White,caucasian,Male,22,19 to 35,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1559,Hispanic,Hispanic,Male,21,19 to 35,0,none,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,1000
+1349,Hispanic,Puerto Rican,Female,52,36 to 74,1,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Ridgewood,NY,1000
+1571,non-Hispanic White,Caucasian,Female,52,36 to 74,0,none,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,NC,1000
+1407,non-Hispanic White,Caucasian,Male,48,36 to 74,3,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Fayetteville,NC,1000
+1421,Unknown,Unknown,Male,24,19 to 35,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,1000
+1437,Hispanic,Hispanic,Male,20,19 to 35,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1560,Hispanic,Hispanic,Female,34,19 to 35,0,none,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,NC,1000
+1350,Hispanic,Hispanic,Female,20,19 to 35,1,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Fayetteville,NC,1000
+YWL1054,non-Hispanic White,Caucasian,Female,31,19 to 35,4,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,02130,Boise,ID,1000
+1366,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,1000
+1392,non-Hispanic White,Caucasian,Male,8,8 to 18,5,Less than 7,Outie,Unknown,Unknown,Unknown,Unknown,Unknown,SanFord,NC,1000
+1400,non-Hispanic White,Caucasian,Male,10,8 to 18,0,none,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Greenville,NC,1000
+1408,non-Hispanic White,Caucasian,Female,37,36 to 74,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Asheboro,NC,1000
+1422,Hispanic,Hispanic,Male,20,19 to 35,2,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1430,non-Hispanic Black,African American,Female,56,36 to 74,7,7 days a week,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1438,non-Hispanic White,Caucasian,Male,21,19 to 35,0,none,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Cary,NC,1000
+1565,non-Hispanic White,Caucasian,Male,32,19 to 35,0,none,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,NC,1000
+1351,non-Hispanic White,Caucasian,Female,54,36 to 74,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Wake Forest ,NC,1000
+YWL1060,Unknown,Unknown ,Female,28,19 to 35,"1,5",Less than 7,innie,Unknown,Unknown,Unknown,Unknown,60642,San Jose,CA,1000
+1359,non-Hispanic White,Caucasian,Male,0,0 to 7,1,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1393,non-Hispanic White,Caucasian,Male,5,0 to 7,5,Less than 7,Outie,Unknown,Unknown,Unknown,Unknown,Unknown,SanFord,NC,1000
+1401,non-Hispanic White,Caucasian,Female,36,36 to 74,4,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Greenville,NC,1000
+1409,Hispanic,Hispanic,Female,14,8 to 18,5,Less than 7,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Asheboro,NC,1000
+1423,Hispanic,Hispanic,Male,20,19 to 35,3,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1431,non-Hispanic White,Caucasian,Male,23,19 to 35,0,none,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Cary,NC,1000
+1442,Unknown,Unknown,Female,68,36 to 74,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,1000
+1566,Unknown,Unknown,Female,32,19 to 35,0,none,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,NC,1000
+1352,non-Hispanic White,Caucasian,Female,38,36 to 74,7,7 days a week,Outie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+YWL1062,non-Hispanic White,Caucasian,Female,43,36 to 74,0,None,innie,Unknown,Unknown,Unknown,Unknown,98122,Boulder,CO,1000
+1368,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,1000
+1394,non-Hispanic White,Caucasian,Female,42,36 to 74,0,none,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Wake Forest ,NC,1000
+1410,non-Hispanic White,Caucasian,Female,57,36 to 74,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Asheboro,NC,1000
+1424,Hispanic,Hispanic,Male,19,19 to 35,2,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1432,non-Hispanic White,Caucasian,Male,21,19 to 35,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1567,non-Hispanic White,Caucasian,Male,59,36 to 74,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,NC,1000
+1353,non-Hispanic White,Caucasian,Female,40,36 to 74,4,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Fuquay Varina,NC,1000
+YWL1074,non-Hispanic White,Caucasian,Female,41,36 to 74,0,None,innie,Unknown,Unknown,Unknown,Unknown,13760,Warrior,AL,1000
+1361,non-Hispanic White,Caucasian,Female,42,36 to 74,6,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Cary,NC,1000
+1395,Unknown,Unknown,Male,9,8 to 18,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Middlesex,NC,1000
+1411,non-Hispanic White,Caucasian,Female,11,8 to 18,4,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Apex,NC,1000
+1433,Hispanic,Hispanic,Male,22,19 to 35,7,7 days a week,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1492,non-Hispanic White,Caucasian,Female,24,19 to 35,0,none,Innie,usa,28590,usa,28590,,Raleigh,NC,1000
+1528,non-Hispanic White,Caucasian,Unknown,68,36 to 74,3,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,NC,1000
+1568,non-Hispanic White,Caucasian,Male,66,36 to 74,1,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,NC,1000
+1354,Unknown,Unknown,Female,25,19 to 35,1,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Broken Arrow,OK,1000
+YWL1196,non-Hispanic White,Caucasian,Female,36,36 to 74,1,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,63304,St. Louis,MO,1000
+1370,non-Hispanic Black,African American,Female,23,19 to 35,4,Less than 7,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+1404,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,1000
+1412,non-Hispanic White,Caucasian,Female,11,8 to 18,7,7 days a week,Outie,Unknown,Unknown,Unknown,Unknown,Unknown,Fayetteville,NC,1000
+1426,non-Hispanic White,Caucasian,Male,20,19 to 35,3,Less than 7,Outie,Unknown,Unknown,Unknown,Unknown,Unknown,Gastonia,NC,1000
+1434,Hispanic,Hispanic,Male,19,19 to 35,Unknown,Unknown,Innie,Unknown,Unknown,Unknown,Unknown,Unknown,Raleigh,NC,1000
+YWL1198,Asian,Chinese,Female,41,36 to 74,0,None,innie,Unknown,Unknown,Unknown,Unknown,98122,Burlington,NC,1000
+YWL1207,Unknown,Unknown,Female,57,36 to 74,0,None,innie,Unknown,Unknown,Unknown,Unknown,10524,Sheridan,OR,1000
+YWL1232,non-Hispanic White,Caucasian,Male,28,19 to 35,4,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,1130 ??,Vienna,Austria,1000
+CALS1007,Latino,Caucasian/Latino,Male,Unknown,Unknown,"0,25",none,Outie,USA,27587,USA,27587,,Wake Forest,NC,1000
+CALS1015,non-Hispanic White,Caucasian,Female,Unknown,Unknown,7,7 days a week,Innie,USA,27512,USA,27614,,Raleigh,NC,1000
+YWL1034,non-Hispanic White,Caucasian,Male,62,36 to 74,0,None,innie,Unknown,Unknown,Unknown,Unknown,62002,Alton,IL,1000
+YWL1010,non-Hispanic White,Caucasian,Female,42,36 to 74,1,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,97203,Portland,OR,1000
+YWL1156,non-Hispanic White,Caucasian,Male,29,19 to 35,7,7 days a week,innie,Unknown,Unknown,Unknown,Unknown,84043,Timonium,MD,1000
+YWL1200,non-Hispanic White,Caucasian,Male,65,36 to 74,Unknown,Unknown,innie,Unknown,Unknown,Unknown,Unknown,02137,east greenbush,NY,1000
+YWL1212,non-Hispanic White,Caucasian,Male,64,36 to 74,2,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,99206-5818,Kaneohe ,HI,1000
+YWL1233,Unknown,Unknown,Female,30,19 to 35,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,1070 ??,Raleigh,NC,1000
+YWL1219,non-Hispanic White,Caucasian,Female,38,36 to 74,0,None,innie,Unknown,Unknown,Unknown,Unknown,80123,Portland,OR,1000
+CALS1008,non-Hispanic White,Caucasian,Male,Unknown,Unknown,7,7 days a week,Innie,USA,27587,USA,27587,,Wake Forest,NC,1000
+CALS1016,non-Hispanic White,Caucasian,Female,Unknown,Unknown,7,7 days a week,Innie,USA,27596,USA,27616,,Wake Forest,NC,1000
+YWL1084,non-Hispanic White,Caucasian,Female,37,36 to 74,Unknown,Unknown,innie,Unknown,Unknown,Unknown,Unknown,43123,Winston-Salem,NC,1000
+YWL1035,non-Hispanic White,Caucasian,Female,25,19 to 35,0,None,innie,Unknown,Unknown,Unknown,Unknown,55404,Minneapolis,MN,1000
+YWL1127,non-Hispanic White,Caucasian,Female,46,36 to 74,3,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,85710,Lufkin,TX,1000
+YWL1015,non-Hispanic White,Caucasian,Male,26,19 to 35,1,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,32609,Gainesville,FL,1000
+YWL1112,Unknown,Unknown,Female,41,36 to 74,Unknown,Unknown,innie,Unknown,Unknown,Unknown,Unknown,42104,Los Angeles,CA,1000
+YWL1158,non-Hispanic White,Caucasian,Male,38,36 to 74,7,7 days a week,innie,Unknown,Unknown,Unknown,Unknown,21093,Berkeley,CA,1000
+YWL1214,non-Hispanic White,Caucasian,Male,41,36 to 74,0,None,innie,Unknown,Unknown,Unknown,Unknown,96744,Brooklyn,NY,1000
+YWL1248,non-Hispanic White,Caucasian,Female,1,0 to 7,Unknown,Unknown,innie,Unknown,Unknown,Unknown,Unknown,27607,Unknown,Unknown,1000
+CALS1001,non-Hispanic White,Caucasian,Male,Unknown,Unknown,7,7 days a week,Innie,USA,27606,USA,27607,,Weaverville,NC,1000
+CALS1009,non-Hispanic White,Caucasian,Male,Unknown,Unknown,0,none,Innie,USA,27587,USA,27587,,Wake Forest,NC,1000
+YWL1120,non-Hispanic White,Caucasian,Female,52,36 to 74,3,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,unknown,tucson,AZ,1000
+YWL1037,non-Hispanic White,Caucasian,Female,27,19 to 35,3,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,01852,Lowell,MA,1000
+YWL1129,non-Hispanic White,Caucasian,Female,33,19 to 35,"1,5",Less than 7,innie,Unknown,Unknown,Unknown,Unknown,75835,Oxford,NC,1000
+YWL1020,non-Hispanic White,Caucasian,Female,49,36 to 74,1,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,98136,Seattle,WA,1000
+YWL1163,non-Hispanic White,Caucasian,Female,30,19 to 35,7,7 days a week,innie,Unknown,Unknown,Unknown,Unknown,55104,Marion,NC,1000
+YWL1203,Unknown,Unknown,Female,32,19 to 35,0,None,innie,Unknown,Unknown,Unknown,Unknown,61615,Cambridge,MA,1000
+YWL1217,non-Hispanic White,Caucasian,Male,30,19 to 35,3,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,94110,Woodbury,MN,1000
+YWL1293,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,1000
+CALS1002,non-Hispanic White,Caucasian,Female,Unknown,Unknown,0,none,Innie,USA,27909,USA,27909,,Elizabeth City,NC,1000
+CALS1010,non-Hispanic White,Caucasian,Male,Unknown,Unknown,0,none,Innie,USA,28270,USA,27587,,Wake Forest,NC,1000
+YWL1048,non-Hispanic White,Caucasian,Female,47,36 to 74,Unknown,Unknown,innie,Unknown,Unknown,Unknown,Unknown,27244,Elon,NC,1000
+YWL1154,non-Hispanic White,Caucasian,Female,58,36 to 74,1,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,97875,Lehi,UT,1000
+YWL1057,non-Hispanic White,Caucasian,Female,Unknown,Unknown,0,None,innie,Unknown,Unknown,Unknown,Unknown,83709,Chicago,IL,1000
+YWL1132,non-Hispanic White,Caucasian,Female,47,36 to 74,0,None,innie,Unknown,Unknown,Unknown,Unknown,27565,Austin,TX,1000
+YWL1199,non-Hispanic White,Caucasian,Female,45,36 to 74,1,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,27217,Readville,MA,1000
+YWL1175,Unknown,Unknown,Female,Unknown,Unknown,0,None,innie,Unknown,Unknown,Unknown,Unknown,24504,Livonia,MI,1000
+YWL1218,non-Hispanic White,Caucasian,Female,15,8 to 18,0,None,innie,Unknown,Unknown,Unknown,Unknown,55125,Littleton ,CO,1000
+YWL1044,Asian,Japanese,Female,55,36 to 74,0,None,innie,Unknown,Unknown,Unknown,Unknown,99163-2049,Pullman,WA,1000
+CALS1003,non-Hispanic White,Caucasian,Male,Unknown,Unknown,0,none,Innie,USA,27020,USA,27020,,Raleigh,NC,1000
+CALS1011,non-Hispanic White,Caucasian,Male,Unknown,Unknown,0,none,Innie,USA,27619,USA,27614,,Raleigh,NC,1000
+YWL1051,non-Hispanic White,Caucasian,Female,49,36 to 74,Unknown,Unknown,innie,Unknown,Unknown,Unknown,Unknown,49242,Hillsdale,MI,1000
+YWL1192,Indian,Indian,Female,39,36 to 74,3,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,94501,Scottsdale,AZ,1000
+YWL1063,non-Hispanic White,Caucasian,Male,46,36 to 74,Unknown,Unknown,innie,Unknown,Unknown,Unknown,Unknown,80304,Seaside,CA,1000
+YWL1133,non-Hispanic White,Caucasian,Female,26,19 to 35,0,None,innie,Unknown,Unknown,Unknown,Unknown,78759,Charlotte,NC ,1000
+YWL1061,non-Hispanic White,Caucasian,Female,25,19 to 35,1,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,95126,Seattle,WA,1000
+YWL1067,non-Hispanic White,Caucasian,Female,48,36 to 74,0,None,innie,Unknown,Unknown,Unknown,Unknown,943955-3215,Fairfax,VA,1000
+YWL1178,non-Hispanic White,Caucasian,Female,29,19 to 35,4,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,48152,Bloomington,IN,1000
+YWL1162,non-Hispanic White,Caucasian,Female,42,36 to 74,5,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,Unknown,Saint Paul,MN,1000
+YWL1223,non-Hispanic White,Caucasian,Female,33,19 to 35,1,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,97213,Camarillo,CA,1000
+YWL1107,non-Hispanic White,Caucasian,Female,26,19 to 35,0,None,innie,Unknown,Unknown,Unknown,Unknown,79015,San Marcos,TX,1000
+CALS1004,non-Hispanic White,Caucasian,Male,Unknown,Unknown,7,7 days a week,Innie,USA,28431,USA,28431,,Chadbourn,NC,1000
+YWL1071,non-Hispanic White,Caucasian,Female,50,36 to 74,1,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,40033,Ormond Beach ,FL,1000
+YWL1215,non-Hispanic White,Caucasian/Jewish,Male,30,19 to 35,7,7 days a week,innie,Unknown,Unknown,Unknown,Unknown,Unknown,san francisco,CA,1000
+YWL1077,non-Hispanic White,Caucasian,Female,50,36 to 74,0,None,innie,Unknown,Unknown,Unknown,Unknown,41017,Baltimore,MD,1000
+YWL1150,Hispanic,Latino,Male,33,19 to 35,Unknown,Unknown,innie,Unknown,Unknown,Unknown,Unknown,28213,Manor,TX,1000
+YWL1099,non-Hispanic White,Caucasian,Female,31,19 to 35,"5,5",Less than 7,innie,Unknown,Unknown,Unknown,Unknown,77098,Portland,OR,1000
+YWL1070,non-Hispanic White,Caucasian,Male,24,19 to 35,1,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,22030,Lebanon,KY,1000
+YWL1183,non-Hispanic White,Caucasian,Female,37,36 to 74,7,7 days a week,innie,Unknown,Unknown,Unknown,Unknown,47401,Belleville,MI,1000
+YWL1167,non-Hispanic White,Caucasian,Female,41,36 to 74,0,None,innie,Unknown,Unknown,Unknown,Unknown,28752,Lynchburg,VA,1000
+YWL1226,non-Hispanic White,Caucasian,Female,28,19 to 35,1,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,93012,Aubertin,France,1000
+CALS1005,non-Hispanic White,Caucasian,Female,Unknown,Unknown,4,Less than 7,Innie,USA,28716,USA,28716,,Canton,NC,1000
+CALS1013,non-Hispanic White,Caucasian,Female,Unknown,Unknown,"1,5",Less than 7,Innie,USA,23464,USA,23464,,HertFord,NC,1000
+CALS1022,Hispanic,Latino,Female,Unknown,Unknown,7,7 days a week,Innie,USA,90277,USA,90277,,Manhattan Beach,CA,1000
+YWL1013,non-Hispanic White,Caucasian,Male,56,36 to 74,"1,5",Less than 7,innie,Unknown,Unknown,Unknown,Unknown,27410,Greensboro,NC,1000
+YWL1081,non-Hispanic White,Caucasian,Male,29,19 to 35,Unknown,Unknown,innie,Unknown,Unknown,Unknown,Unknown,32608,Grove City,OH,1000
+YWL1193,non-Hispanic White,Caucasian,Female,58,36 to 74,1,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,Unknown,St. Peters,MO,1000
+YWL1101,non-Hispanic White,Caucasian,Female,36,36 to 74,Unknown,Unknown,innie,Unknown,Unknown,Unknown,Unknown,97217,Skokie,IL,1000
+YWL1072,non-Hispanic White,Caucasian,Female,27,19 to 35,0,None,innie,Unknown,Unknown,Unknown,Unknown,32174,Endwell,NY,1000
+YWL1186,non-Hispanic White,Caucasian,Female,51,36 to 74,Unknown,Unknown,outie,Unknown,Unknown,Unknown,Unknown,48111,Alameda,CA,1000
+YWL1205,non-Hispanic White,Caucasian,Female,30,19 to 35,6,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,02139,Garrison,NY,1000
+YWL1228,non-Hispanic White,Caucasian,Female,33,19 to 35,0,None,innie,Unknown,Unknown,Unknown,Unknown,64290,Vienna,Austria,1000
+YWL1043,non-Hispanic White,Caucasian,Male,58,36 to 74,7,7 days a week,innie,Unknown,Unknown,Unknown,Unknown,27572,Rougemont,NC,1000
+CALS1006,non-Hispanic White,Caucasian,Female,Unknown,Unknown,7,7 days a week,Innie,USA,20034,USA,20034,,Statesville,NC,1000
+CALS1014,non-Hispanic White,Caucasian,Male,Unknown,Unknown,6,Less than 7,Outie,USA,28403,Unknown,Unknown,,Wilmington,NC,1000
+CALS1023,non-Hispanic White,Caucasian,Female,Unknown,Unknown,1,Less than 7,Innie,USA,93535,USA,28428,,Wilmington,NC,1000
+YWL1018,non-Hispanic White,Caucasian,Male,61,36 to 74,7,7 days a week,innie,Unknown,Unknown,Unknown,Unknown,81002,Pueblo,CO,1000
+YWL1085,non-Hispanic White,Caucasian,Female,41,36 to 74,Unknown,Unknown,innie,Unknown,Unknown,Unknown,Unknown,27104,Houston,TX,1000
+YWL1209,Unknown,Unknown,Female,34,19 to 35,0,None,innie,Unknown,Unknown,Unknown,Unknown,97378,Spokane Valley,WA,1000
+YWL1103,non-Hispanic White,Caucasian,Female,32,19 to 35,3,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,60076,Oakland,CA,1000
+YWL1076,non-Hispanic White,Caucasian,Male,45,36 to 74,Unknown,Unknown,innie,Unknown,Unknown,Unknown,Unknown,35180,Crescent Springs,KY,1000
+YWL1197,non-Hispanic White,Caucasian,Female,36,36 to 74,3,Less than 7,innie,Unknown,Unknown,Unknown,Unknown,63132,Seattle,WA,1000

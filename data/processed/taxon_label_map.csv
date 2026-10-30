@@ -1,0 +1,650 @@
+raw_row,label
+0,Unclassified
+1,Cenarchaeaceae (unresolved below family)
+2,Nitrososphaeraceae;Candidatus Nitrososphaera
+3,Methanobacteriaceae;Methanobacterium
+4,Methanobacteriaceae;Methanobrevibacter
+5,Methanosaetaceae;Methanosaeta
+6,WCHD3-30 (unresolved below order)
+7,YLA114 (unresolved below order)
+8,Bacteria (unresolved below kingdom)
+9,Acidobacteria (unresolved below phylum)
+10,Acidobacteriaceae (unresolved below family)
+11,Acidobacteriaceae (unresolved below family)
+12,Acidobacteriaceae;Terriglobus
+13,Koribacteraceae (unresolved below family)
+14,Koribacteraceae (unresolved below family)
+15,Acidobacteria-2 (unresolved below class)
+16,CCU21 (unresolved below order)
+17,iii1-15 (unresolved below order)
+18,RB40 (unresolved below family)
+19,mb2424 (unresolved below family)
+20,Chloracidobacteria (unresolved below class)
+21,Solibacteraceae;Candidatus Solibacter
+22,Sva0725 (unresolved below order)
+23,DS-18 (unresolved below order)
+24,Actinobacteria (unresolved below phylum)
+25,Acidimicrobiales (unresolved below order)
+26,Acidimicrobiales (unresolved below order)
+27,C111 (unresolved below family)
+28,EB1017 (unresolved below family)
+29,Microthrixaceae (unresolved below family)
+30,Actinomycetales (unresolved below order)
+31,ACK-M1 (unresolved below family)
+32,Actinomycetaceae (unresolved below family)
+33,Actinomycetaceae (unresolved below family)
+34,Actinomycetaceae;Actinobaculum
+35,Actinomycetaceae;Actinomyces
+36,Actinomycetaceae;Arcanobacterium
+37,Actinomycetaceae;Mobiluncus
+38,Actinomycetaceae;Parascardovia
+39,Actinomycetaceae;Varibaculum
+40,Actinospicaceae (unresolved below family)
+41,Beutenbergiaceae (unresolved below family)
+42,Brevibacteriaceae;Brevibacterium
+43,Cellulomonadaceae (unresolved below family)
+44,Cellulomonadaceae (unresolved below family)
+45,Cellulomonadaceae;Cellulomonas
+46,Cellulomonadaceae;Pseudoclavibacter
+47,Corynebacteriaceae (unresolved below family)
+48,Corynebacteriaceae;Corynebacterium
+49,Cryptosporangiaceae;Cryptosporangium
+50,Dermabacteraceae (unresolved below family)
+51,Dermabacteraceae (unresolved below family)
+52,Dermabacteraceae;Dermabacter
+53,Dermacoccaceae;Dermacoccus
+54,Dermatophilaceae (unresolved below family)
+55,Dietziaceae;Dietzia
+56,Frankiaceae (unresolved below family)
+57,Geodermatophilaceae (unresolved below family)
+58,Geodermatophilaceae;Geodermatophilus
+59,Geodermatophilaceae;Modestobacter
+60,Glycomycetaceae (unresolved below family)
+61,Gordoniaceae (unresolved below family)
+62,Gordoniaceae;Gordonia
+63,Intrasporangiaceae (unresolved below family)
+64,Intrasporangiaceae (unresolved below family)
+65,Intrasporangiaceae;Arsenicicoccus
+66,Intrasporangiaceae;Phycicoccus
+67,Kineosporiaceae (unresolved below family)
+68,Kineosporiaceae;Kineococcus
+69,Microbacteriaceae (unresolved below family)
+70,Microbacteriaceae;Leucobacter
+71,Micrococcaceae (unresolved below family)
+72,Micrococcaceae;Arthrobacter
+73,Micrococcaceae;Kocuria
+74,Micrococcaceae;Micrococcus
+75,Micrococcaceae;Nesterenkonia
+76,Micrococcaceae;Rothia
+77,Micromonosporaceae (unresolved below family)
+78,Micromonosporaceae (unresolved below family)
+79,Micromonosporaceae;Actinoplanes
+80,Micromonosporaceae;Dactylosporangium
+81,Micromonosporaceae;Micromonospora
+82,Mycobacteriaceae;Mycobacterium
+83,Nakamurellaceae (unresolved below family)
+84,Nocardiaceae;Nocardia
+85,Nocardiaceae;Rhodococcus
+86,Nocardioidaceae (unresolved below family)
+87,Nocardioidaceae (unresolved below family)
+88,Nocardioidaceae;Aeromicrobium
+89,Nocardioidaceae;Nocardioides
+90,Nocardioidaceae;Pimelobacter
+91,Nocardiopsaceae (unresolved below family)
+92,Promicromonosporaceae (unresolved below family)
+93,Propionibacteriaceae;Propionibacterium
+94,Pseudonocardiaceae (unresolved below family)
+95,Pseudonocardiaceae;Actinomycetospora
+96,Pseudonocardiaceae;Amycolatopsis
+97,Pseudonocardiaceae;Pseudonocardia
+98,Pseudonocardiaceae;Saccharopolyspora
+99,Pseudonocardiaceae;Thermobispora
+100,Ruaniaceae (unresolved below family)
+101,Sporichthyaceae (unresolved below family)
+102,Streptomycetaceae (unresolved below family)
+103,Streptomycetaceae (unresolved below family)
+104,Streptomycetaceae;Streptomyces
+105,Streptosporangiaceae (unresolved below family)
+106,Streptosporangiaceae;Streptosporangium
+107,Thermomonosporaceae (unresolved below family)
+108,Thermomonosporaceae;Actinomadura
+109,Williamsiaceae;Williamsia
+110,Yaniellaceae;Yaniella
+111,Bifidobacteriaceae;Alloscardovia
+112,Bifidobacteriaceae;Bifidobacterium
+113,Bifidobacteriaceae;Gardnerella
+114,Rubrobacteraceae;Rubrobacter
+115,Gaiellales (unresolved below order)
+116,AK1AB1_02E (unresolved below family)
+117,Gaiellaceae (unresolved below family)
+118,Solirubrobacterales (unresolved below order)
+119,Solirubrobacterales (unresolved below order)
+120,Conexibacteraceae (unresolved below family)
+121,Conexibacteraceae (unresolved below family)
+122,Patulibacteraceae (unresolved below family)
+123,Patulibacteraceae;Patulibacter
+124,Solirubrobacteraceae (unresolved below family)
+125,Solirubrobacteraceae (unresolved below family)
+126,Aquificaceae (unresolved below family)
+127,Armatimonadaceae (unresolved below family)
+128,Armatimonadaceae;CL0-1
+129,WD294 (unresolved below family)
+130,Chthonomonadaceae;Chthonomonas
+131,SJA-176 (unresolved below class)
+132,[Fimbriimonadaceae];Fimbriimonas
+133,PRR-11 (unresolved below class)
+134,Bacteroidetes (unresolved below phylum)
+135,Bacteroidales (unresolved below order)
+136,Bacteroidales (unresolved below order)
+137,Bacteroidaceae;Bacteroides
+138,Porphyromonadaceae (unresolved below family)
+139,Porphyromonadaceae;Candidatus Azobacteroides
+140,Porphyromonadaceae;Dysgonomonas
+141,Porphyromonadaceae;Parabacteroides
+142,Porphyromonadaceae;Porphyromonas
+143,Porphyromonadaceae;Tannerella
+144,Prevotellaceae;Prevotella
+145,Rikenellaceae (unresolved below family)
+146,S24-7 (unresolved below family)
+147,[Odoribacteraceae];Odoribacter
+148,[Paraprevotellaceae];Paraprevotella
+149,[Paraprevotellaceae];[Prevotella]
+150,Blattabacteriaceae (unresolved below family)
+151,Cryomorphaceae (unresolved below family)
+152,Flavobacteriaceae (unresolved below family)
+153,Flavobacteriaceae;Bergeyella
+154,Flavobacteriaceae;Capnocytophaga
+155,Flavobacteriaceae;Chryseobacterium
+156,Flavobacteriaceae;Flavobacterium
+157,Flavobacteriaceae;Gillisia
+158,Flavobacteriaceae;Haloanella
+159,Flavobacteriaceae;Kaistella
+160,Flavobacteriaceae;Salinimicrobium
+161,Flavobacteriaceae;Wautersiella
+162,Sphingobacteriales (unresolved below order)
+163,Sphingobacteriales (unresolved below order)
+164,Chitinophagaceae (unresolved below family)
+165,Chitinophagaceae (unresolved below family)
+166,Chitinophagaceae;Chitinophaga
+167,Chitinophagaceae;Flavisolibacter
+168,Chitinophagaceae;Niabella
+169,Chitinophagaceae;Segetibacter
+170,Cyclobacteriaceae (unresolved below family)
+171,Ekhidnaceae (unresolved below family)
+172,Flammeovirgaceae;A4
+173,Flexibacteraceae (unresolved below family)
+174,Flexibacteraceae (unresolved below family)
+175,Flexibacteraceae;Arcicella
+176,Flexibacteraceae;Dyadobacter
+177,Flexibacteraceae;Flectobacillus
+178,Flexibacteraceae;Hymenobacter
+179,Flexibacteraceae;Pontibacter
+180,Flexibacteraceae;Spirosoma
+181,Rhodothermaceae (unresolved below family)
+182,Saprospiraceae (unresolved below family)
+183,Sphingobacteriaceae (unresolved below family)
+184,Sphingobacteriaceae (unresolved below family)
+185,Sphingobacteriaceae;Olivibacter
+186,Sphingobacteriaceae;Parapedobacter
+187,Sphingobacteriaceae;Pedobacter
+188,Sphingobacteriaceae;Sphingobacterium
+189,VC2_1_Bac22 (unresolved below class)
+190,Chlamydiales (unresolved below order)
+191,Chlorobi (unresolved below phylum)
+192,Anaerolinaceae (unresolved below family)
+193,Anaerolinaceae (unresolved below family)
+194,Anaerolinaceae;Anaerolinea
+195,Anaerolinaceae;Longilinea
+196,Anaerolinaceae;T78
+197,Caldilineaceae (unresolved below family)
+198,MSB-1E9 (unresolved below order)
+199,S0208 (unresolved below order)
+200,A4b (unresolved below family)
+201,Dolo_23 (unresolved below family)
+202,Chloroflexi (unresolved below class)
+203,Chloroflexaceae (unresolved below family)
+204,Oscillochloridaceae;Oscillochloris
+205,Roseiflexales (unresolved below order)
+206,Ellin6529 (unresolved below class)
+207,B12-WMSP1 (unresolved below order)
+208,Thermogemmatisporaceae (unresolved below family)
+209,TK17 (unresolved below class)
+210,Thermobaculaceae (unresolved below family)
+211,JG30-KF-CM45 (unresolved below order)
+212,Cyanobacteria (unresolved below phylum)
+213,MLE1-12 (unresolved below order)
+214,SM1D11 (unresolved below order)
+215,Nostocaceae (unresolved below family)
+216,Rivulariaceae;Calothrix
+217,Oscillatoriophycideae (unresolved below class)
+218,Oscillatoriophycideae (unresolved below class)
+219,Chroococcales (unresolved below order)
+220,Cyanobacteriaceae (unresolved below family)
+221,Phormidiaceae (unresolved below family)
+222,Phormidiaceae;Microcoleus
+223,Xenococcaceae (unresolved below family)
+224,Xenococcaceae (unresolved below family)
+225,Xenococcaceae;Chroococcidiopsis
+226,Phormidiaceae;Phormidium
+227,S15B-MN24 (unresolved below class)
+228,Pseudanabaenaceae;Leptolyngbya
+229,Elusimicrobiales (unresolved below order)
+230,IIb (unresolved below order)
+231,258ds10 (unresolved below order)
+232,Fibrobacteraceae (unresolved below family)
+233,Firmicutes (unresolved below phylum)
+234,Bacilli (unresolved below class)
+235,Bacilli (unresolved below class)
+236,Bacillales (unresolved below order)
+237,Bacillales (unresolved below order)
+238,Alicyclobacillaceae;Alicyclobacillus
+239,Bacillaceae (unresolved below family)
+240,Bacillaceae (unresolved below family)
+241,Bacillaceae;Bacillus
+242,Bacillaceae;Geobacillus
+243,Bacillaceae;Marinibacillus
+244,Bacillaceae;Marinococcus
+245,Bacillaceae;Natronobacillus
+246,Bacillaceae;Terribacillus
+247,Bacillaceae;Virgibacillus
+248,Listeriaceae;Brochothrix
+249,Paenibacillaceae (unresolved below family)
+250,Paenibacillaceae (unresolved below family)
+251,Paenibacillaceae;Cohnella
+252,Paenibacillaceae;Paenibacillus
+253,Paenibacillaceae;Thermobacillus
+254,Planococcaceae (unresolved below family)
+255,Planococcaceae (unresolved below family)
+256,Planococcaceae;Solibacillus
+257,Planococcaceae;Sporosarcina
+258,Planococcaceae;Ureibacillus
+259,Sporolactobacillaceae (unresolved below family)
+260,Staphylococcaceae (unresolved below family)
+261,Staphylococcaceae (unresolved below family)
+262,Staphylococcaceae;Jeotgalicoccus
+263,Staphylococcaceae;Staphylococcus
+264,Thermoactinomycetaceae;Planifilum
+265,Thermoactinomycetaceae;Thermoactinomyces
+266,Exiguobacteraceae;Exiguobacterium
+267,Gemellaceae (unresolved below family)
+268,Lactobacillales (unresolved below order)
+269,Aerococcaceae (unresolved below family)
+270,Aerococcaceae (unresolved below family)
+271,Aerococcaceae;Abiotrophia
+272,Aerococcaceae;Aerococcus
+273,Aerococcaceae;Alloiococcus
+274,Aerococcaceae;Facklamia
+275,Carnobacteriaceae;Carnobacterium
+276,Carnobacteriaceae;Desemzia
+277,Carnobacteriaceae;Granulicatella
+278,Carnobacteriaceae;Trichococcus
+279,Enterococcaceae (unresolved below family)
+280,Enterococcaceae;Enterococcus
+281,Enterococcaceae;Tetragenococcus
+282,Lactobacillaceae (unresolved below family)
+283,Lactobacillaceae (unresolved below family)
+284,Lactobacillaceae;Lactobacillus
+285,Leuconostocaceae (unresolved below family)
+286,Leuconostocaceae (unresolved below family)
+287,Leuconostocaceae;Fructobacillus
+288,Leuconostocaceae;Leuconostoc
+289,Leuconostocaceae;Weissella
+290,Streptococcaceae (unresolved below family)
+291,Streptococcaceae;Lactococcus
+292,Streptococcaceae;Streptococcus
+293,Thermicanaceae;Thermicanus
+294,Turicibacteraceae;Turicibacter
+295,Clostridia (unresolved below class)
+296,Clostridia (unresolved below class)
+297,Clostridiales (unresolved below order)
+298,Clostridiales (unresolved below order)
+299,Christensenellaceae (unresolved below family)
+300,Clostridiaceae (unresolved below family)
+301,Clostridiaceae (unresolved below family)
+302,Clostridiaceae;Anaerococcus
+303,Clostridiaceae;Clostridium
+304,Clostridiaceae;Finegoldia
+305,Clostridiaceae;Helcococcus
+306,Clostridiaceae;Mogibacterium
+307,Clostridiaceae;Peptoniphilus
+308,Clostridiaceae;Sedimentibacter
+309,Dehalobacteriaceae;Dehalobacterium
+310,EtOH8 (unresolved below family)
+311,Eubacteriaceae;Eubacterium
+312,Lachnospiraceae (unresolved below family)
+313,Lachnospiraceae (unresolved below family)
+314,Lachnospiraceae;Anaerostipes
+315,Lachnospiraceae;Blautia
+316,Lachnospiraceae;Butyrivibrio
+317,Lachnospiraceae;Catonella
+318,Lachnospiraceae;Coprococcus
+319,Lachnospiraceae;Dorea
+320,Lachnospiraceae;Johnsonella
+321,Lachnospiraceae;Lachnobacterium
+322,Lachnospiraceae;Lachnospira
+323,Lachnospiraceae;Moryella
+324,Lachnospiraceae;Oribacterium
+325,Lachnospiraceae;Roseburia
+326,Lachnospiraceae;[Ruminococcus]
+327,Peptococcaceae (unresolved below family)
+328,Peptococcaceae;Peptococcus
+329,Peptostreptococcaceae (unresolved below family)
+330,Peptostreptococcaceae;Filifactor
+331,Peptostreptococcaceae;Peptostreptococcus
+332,Ruminococcaceae (unresolved below family)
+333,Ruminococcaceae (unresolved below family)
+334,Ruminococcaceae;Ethanoligenens
+335,Ruminococcaceae;Faecalibacterium
+336,Ruminococcaceae;Oscillospira
+337,Ruminococcaceae;Ruminococcus
+338,Sulfobacillaceae (unresolved below family)
+339,Veillonellaceae (unresolved below family)
+340,Veillonellaceae (unresolved below family)
+341,Veillonellaceae;Acidaminococcus
+342,Veillonellaceae;Desulfosporomusa
+343,Veillonellaceae;Dialister
+344,Veillonellaceae;Megamonas
+345,Veillonellaceae;Megasphaera
+346,Veillonellaceae;Negativicoccus
+347,Veillonellaceae;Phascolarctobacterium
+348,Veillonellaceae;Selenomonas
+349,Veillonellaceae;Veillonella
+350,Coriobacteriales (unresolved below order)
+351,Coriobacteriaceae (unresolved below family)
+352,Coriobacteriaceae (unresolved below family)
+353,Coriobacteriaceae;Atopobium
+354,Coriobacteriaceae;Collinsella
+355,Coriobacteriaceae;Eggerthella
+356,Coriobacteriaceae;Slackia
+357,Erysipelotrichaceae;Allobaculum
+358,Erysipelotrichaceae;Bulleidia
+359,[Coprobacillaceae] (unresolved below family)
+360,[Coprobacillaceae];Catenibacterium
+361,ML615J-28 (unresolved below order)
+362,Fusobacteriaceae;Fusobacterium
+363,Fusobacteriaceae;J2-29
+364,Leptotrichiaceae (unresolved below family)
+365,Leptotrichiaceae;Leptotrichia
+366,Leptotrichiaceae;Sneathia
+367,Leptotrichiaceae;Streptobacillus
+368,3BR-5F (unresolved below class)
+369,BD1-5 (unresolved below class)
+370,GKS2-174 (unresolved below class)
+371,Gemm-1 (unresolved below class)
+372,Gemm-3 (unresolved below class)
+373,Gemmatimonadetes (unresolved below class)
+374,Gemmatimonadetes (unresolved below class)
+375,Gemmatimonadaceae;Gemmatimonas
+376,KD8-87 (unresolved below order)
+377,Nitrospirales (unresolved below order)
+378,Nitrospiraceae;JG37-AG-70
+379,Thermodesulfovibrionaceae;DCE29
+380,SM2F11 (unresolved below class)
+381,ZB2 (unresolved below class)
+382,WCHB1-64 (unresolved below class)
+383,BD7-11 (unresolved below class)
+384,Phycisphaerae (unresolved below class)
+385,Phycisphaerales (unresolved below order)
+386,Gemmataceae (unresolved below family)
+387,Gemmataceae;Gemmata
+388,Isosphaeraceae (unresolved below family)
+389,Isosphaeraceae (unresolved below family)
+390,Pirellulaceae (unresolved below family)
+391,Pirellulaceae (unresolved below family)
+392,Pirellulaceae;A17
+393,Planctomycetaceae;Planctomyces
+394,PHOS-HE93 (unresolved below order)
+395,Proteobacteria (unresolved below phylum)
+396,Alphaproteobacteria (unresolved below class)
+397,BD7-3 (unresolved below order)
+398,Caulobacterales (unresolved below order)
+399,Caulobacteraceae (unresolved below family)
+400,Caulobacteraceae (unresolved below family)
+401,Caulobacteraceae;Arthrospira
+402,Caulobacteraceae;Asticcacaulis
+403,Caulobacteraceae;Brevundimonas
+404,Caulobacteraceae;Caulobacter
+405,Caulobacteraceae;Phenylobacterium
+406,Ellin329 (unresolved below order)
+407,RF32 (unresolved below order)
+408,Rhizobiales (unresolved below order)
+409,Rhizobiales (unresolved below order)
+410,Aurantimonadaceae (unresolved below family)
+411,Bartonellaceae (unresolved below family)
+412,Beijerinckiaceae (unresolved below family)
+413,Beijerinckiaceae;Chelatococcus
+414,Bradyrhizobiaceae (unresolved below family)
+415,Bradyrhizobiaceae (unresolved below family)
+416,Bradyrhizobiaceae;Balneimonas
+417,Bradyrhizobiaceae;Bradyrhizobium
+418,Brucellaceae (unresolved below family)
+419,Brucellaceae;Ochrobactrum
+420,Hyphomicrobiaceae (unresolved below family)
+421,Hyphomicrobiaceae;Devosia
+422,Hyphomicrobiaceae;Hyphomicrobium
+423,Hyphomicrobiaceae;Pedomicrobium
+424,Hyphomicrobiaceae;Rhodoplanes
+425,Methylobacteriaceae (unresolved below family)
+426,Methylobacteriaceae;Methylobacterium
+427,Methylocystaceae (unresolved below family)
+428,Methylocystaceae (unresolved below family)
+429,Methylocystaceae;Pleomorphomonas
+430,Phyllobacteriaceae (unresolved below family)
+431,Rhizobiaceae (unresolved below family)
+432,Rhizobiaceae (unresolved below family)
+433,Rhizobiaceae;Agrobacterium
+434,Rhizobiaceae;Kaistia
+435,Rhizobiaceae;Rhizobium
+436,Rhodobiaceae (unresolved below family)
+437,Xanthobacteraceae (unresolved below family)
+438,Xanthobacteraceae;Labrys
+439,Rhodobacteraceae (unresolved below family)
+440,Rhodobacteraceae;Amaricoccus
+441,Rhodobacteraceae;Loktanella
+442,Rhodobacteraceae;Marivita
+443,Rhodobacteraceae;Paracoccus
+444,Rhodobacteraceae;Rhodobacter
+445,Rhodobacteraceae;Rubellimicrobium
+446,Rhodospirillales (unresolved below order)
+447,Rhodospirillales (unresolved below order)
+448,Acetobacteraceae (unresolved below family)
+449,Acetobacteraceae (unresolved below family)
+450,Acetobacteraceae;Acetobacter
+451,Acetobacteraceae;Acidisoma
+452,Acetobacteraceae;Gluconobacter
+453,Acetobacteraceae;Roseococcus
+454,Acetobacteraceae;Roseomonas
+455,Acetobacteraceae;Swaminathania
+456,Rhodospirillaceae (unresolved below family)
+457,Rhodospirillaceae (unresolved below family)
+458,Rhodospirillaceae;Azospirillum
+459,Rhodospirillaceae;Skermanella
+460,Rickettsiales (unresolved below order)
+461,Rickettsiales (unresolved below order)
+462,Rickettsiaceae;Rickettsia
+463,Rickettsiaceae;Wolbachia
+464,mitochondria (unresolved below family)
+465,Sphingomonadales (unresolved below order)
+466,Sphingomonadales (unresolved below order)
+467,Erythrobacteraceae (unresolved below family)
+468,Erythrobacteraceae (unresolved below family)
+469,Erythrobacteraceae;Erythrobacter
+470,Erythrobacteraceae;Erythromicrobium
+471,Sphingomonadaceae (unresolved below family)
+472,Sphingomonadaceae (unresolved below family)
+473,Sphingomonadaceae;Blastomonas
+474,Sphingomonadaceae;Kaistobacter
+475,Sphingomonadaceae;Novosphingobium
+476,Sphingomonadaceae;Sphingobium
+477,Sphingomonadaceae;Sphingomonas
+478,Sphingomonadaceae;Sphingopyxis
+479,Betaproteobacteria (unresolved below class)
+480,Betaproteobacteria (unresolved below class)
+481,Burkholderiales (unresolved below order)
+482,Alcaligenaceae (unresolved below family)
+483,Alcaligenaceae (unresolved below family)
+484,Alcaligenaceae;Achromobacter
+485,Alcaligenaceae;Oligella
+486,Alcaligenaceae;Sutterella
+487,Burkholderiaceae (unresolved below family)
+488,Burkholderiaceae;Burkholderia
+489,Burkholderiaceae;Lautropia
+490,Burkholderiaceae;Pandoraea
+491,Comamonadaceae (unresolved below family)
+492,Comamonadaceae;Comamonas
+493,Comamonadaceae;Hydrogenophaga
+494,Comamonadaceae;Hylemonella
+495,Comamonadaceae;Limnobacter
+496,Comamonadaceae;Polaromonas
+497,Comamonadaceae;Rubrivivax
+498,Comamonadaceae;Tepidimonas
+499,Oxalobacteraceae (unresolved below family)
+500,Oxalobacteraceae (unresolved below family)
+501,Oxalobacteraceae;Cupriavidus
+502,Oxalobacteraceae;Herminiimonas
+503,Oxalobacteraceae;Janthinobacterium
+504,Oxalobacteraceae;Polynucleobacter
+505,Ellin6067 (unresolved below order)
+506,MND1 (unresolved below order)
+507,MWH-UniP1 (unresolved below order)
+508,Methylophilales (unresolved below order)
+509,Methylophilaceae (unresolved below family)
+510,Methylophilaceae;Methylotenera
+511,Neisseriaceae (unresolved below family)
+512,Neisseriaceae (unresolved below family)
+513,Neisseriaceae;Conchiformibius
+514,Neisseriaceae;Kingella
+515,Neisseriaceae;Neisseria
+516,Neisseriaceae;Vogesella
+517,Nitrosomonadaceae (unresolved below family)
+518,Rhodocyclaceae (unresolved below family)
+519,Rhodocyclaceae;Dechloromonas
+520,Rhodocyclaceae;Hydrogenophilus
+521,Rhodocyclaceae;Methyloversatilis
+522,Rhodocyclaceae;Sulfuritalea
+523,SC-I-84 (unresolved below order)
+524,Deltaproteobacteria (unresolved below class)
+525,Bacteriovoracaceae (unresolved below family)
+526,Bdellovibrionaceae;Bdellovibrio
+527,Desulfobulbaceae;Desulfobulbus
+528,Desulfovibrionaceae;Bilophila
+529,Desulfovibrionaceae;Desulfovibrio
+530,FAC87 (unresolved below order)
+531,MIZ46 (unresolved below order)
+532,Myxococcales (unresolved below order)
+533,Myxococcales (unresolved below order)
+534,0319-6G20 (unresolved below family)
+535,Cystobacteraceae (unresolved below family)
+536,Cystobacterineae (unresolved below family)
+537,Myxococcaceae (unresolved below family)
+538,Myxococcaceae;Myxococcus
+539,OM27 (unresolved below family)
+540,Polyangiaceae (unresolved below family)
+541,Polyangiaceae (unresolved below family)
+542,Spirobacillales (unresolved below order)
+543,[Entotheonellales] (unresolved below order)
+544,Campylobacteraceae;Campylobacter
+545,Helicobacteraceae (unresolved below family)
+546,Helicobacteraceae;Helicobacter
+547,Gammaproteobacteria (unresolved below class)
+548,Aeromonadales (unresolved below order)
+549,Aeromonadales (unresolved below order)
+550,Aeromonadaceae (unresolved below family)
+551,Aeromonadaceae;Tolumonas
+552,Alteromonadaceae;Alteromonas
+553,Alteromonadaceae;Cellvibrio
+554,Colwelliaceae (unresolved below family)
+555,Pseudoalteromonadaceae (unresolved below family)
+556,Pseudoalteromonadaceae;Pseudoalteromonas
+557,Psychromonadaceae;Psychromonas
+558,Shewanellaceae;Shewanella
+559,[Chromatiaceae] (unresolved below family)
+560,[Chromatiaceae];Alishewanella
+561,[Chromatiaceae];Rheinheimera
+562,Cardiobacteriaceae (unresolved below family)
+563,Cardiobacteriaceae;Cardiobacterium
+564,Chromatiales (unresolved below order)
+565,Halothiobacillaceae;Thiovirga
+566,Enterobacteriaceae (unresolved below family)
+567,Enterobacteriaceae;Buchnera
+568,Enterobacteriaceae;Citrobacter
+569,Enterobacteriaceae;Erwinia
+570,Enterobacteriaceae;Morganella
+571,Enterobacteriaceae;Proteus
+572,Coxiellaceae (unresolved below family)
+573,Coxiellaceae;Aquicella
+574,Coxiellaceae;Rickettsiella
+575,Legionellaceae (unresolved below family)
+576,Legionellaceae;Legionella
+577,Methylococcaceae;Methylomonas
+578,Alcanivoracaceae;Alcanivorax
+579,Halomonadaceae (unresolved below family)
+580,Halomonadaceae;Cobetia
+581,Oceanospirillaceae;Marinomonas
+582,Pasteurellales (unresolved below order)
+583,Pasteurellaceae (unresolved below family)
+584,Pasteurellaceae;Haemophilus
+585,Moraxellaceae (unresolved below family)
+586,Moraxellaceae (unresolved below family)
+587,Moraxellaceae;Acinetobacter
+588,Moraxellaceae;Alkanindiges
+589,Moraxellaceae;Enhydrobacter
+590,Moraxellaceae;Moraxella
+591,Moraxellaceae;Psychrobacter
+592,Pseudomonadaceae (unresolved below family)
+593,Pseudomonadaceae (unresolved below family)
+594,Pseudomonadaceae;Azorhizophilus
+595,Pseudomonadaceae;Pseudomonas
+596,Vibrionaceae (unresolved below family)
+597,Vibrionaceae;Aliivibrio
+598,Vibrionaceae;Photobacterium
+599,Vibrionaceae;Vibrio
+600,Sinobacteraceae (unresolved below family)
+601,Sinobacteraceae;Nevskia
+602,Xanthomonadaceae (unresolved below family)
+603,Xanthomonadaceae (unresolved below family)
+604,Xanthomonadaceae;Dokdonella
+605,Xanthomonadaceae;Luteibacter
+606,Xanthomonadaceae;Luteimonas
+607,Xanthomonadaceae;Lysobacter
+608,Xanthomonadaceae;Pseudoxanthomonas
+609,Xanthomonadaceae;Rhodanobacter
+610,Xanthomonadaceae;Stenotrophomonas
+611,Xanthomonadaceae;Thermomonas
+612,Xanthomonadaceae;Xylella
+613,SR1 (unresolved below phylum)
+614,Spirochaetaceae;Spirochaeta
+615,Spirochaetaceae;Treponema
+616,Leptospiraceae (unresolved below family)
+617,Leptospiraceae;Leptospira
+618,Synergistia (unresolved below class)
+619,Dethiosulfovibrionaceae (unresolved below family)
+620,Dethiosulfovibrionaceae (unresolved below family)
+621,Dethiosulfovibrionaceae;Pyramidobacter
+622,Dethiosulfovibrionaceae;TG5
+623,SJA-4 (unresolved below class)
+624,SC3 (unresolved below class)
+625,TM7-3 (unresolved below class)
+626,CW040 (unresolved below order)
+627,EW055 (unresolved below order)
+628,Acholeplasmataceae;Acholeplasma
+629,Entomoplasmatales (unresolved below order)
+630,Mycoplasmataceae;Mycoplasma
+631,RF39 (unresolved below order)
+632,Deinococcaceae;Deinococcus
+633,Thermaceae;Thermus
+634,Opitutaceae;Opitutus
+635,WCHB1-41 (unresolved below order)
+636,Verrucomicrobiaceae (unresolved below family)
+637,Verrucomicrobiaceae (unresolved below family)
+638,Verrucomicrobiaceae;Akkermansia
+639,Verrucomicrobiaceae;Luteolibacter
+640,Methylacidiphilales (unresolved below order)
+641,[Pedosphaerae] (unresolved below class)
+642,[Pedosphaerales] (unresolved below order)
+643,[Chthoniobacteraceae] (unresolved below family)
+644,[Chthoniobacteraceae];Candidatus Xiphinematobacter
+645,[Chthoniobacteraceae];DA101
+646,[Chthoniobacteraceae];Ellin506
+647,WPS-2 (unresolved below phylum)
+648,WYO (unresolved below phylum)

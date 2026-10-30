@@ -1,0 +1,274 @@
+ID,Gender,Age,Wash_Freq,Wash_Group,Navel,Ethnicity,In_NC,assigned_reads
+1153,Female,18.0,,,Innie,non-Hispanic White,1.0,1000
+1161,Male,28.0,,,Innie,non-Hispanic White,1.0,1000
+1169,Male,7.0,,,,Other,0.0,985
+979,Female,35.0,,,,,1.0,1000
+1113,Female,8.0,,,Innie,Other,1.0,1000
+1121,Female,12.0,,,Innie,,1.0,1000
+1145,Male,35.0,,,Innie,non-Hispanic White,1.0,1000
+1154,Female,23.0,,,Innie,non-Hispanic White,1.0,1000
+1162,Female,36.0,,,Innie,,0.0,998
+1170,Male,44.0,,,,Other,0.0,1000
+980,Female,52.0,,,Innie,non-Hispanic White,1.0,1000
+988,Female,59.0,,,Innie,non-Hispanic White,1.0,1000
+1106,Male,74.0,,,,non-Hispanic White,0.0,1000
+1114,Female,3.0,,,Innie,Other,1.0,1000
+1122,Female,15.0,,,Innie,Hispanic,1.0,999
+1138,Male,10.0,,,Innie,Hispanic,1.0,1000
+1146,Male,25.0,,,Innie,Other,1.0,1000
+1163,Female,14.0,,,,Other,1.0,998
+1171,Male,18.0,,,Innie,non-Hispanic White,1.0,1000
+981,Female,44.0,,,Innie,non-Hispanic White,1.0,1000
+1107,Female,62.0,,,Innie,non-Hispanic White,1.0,994
+1123,Male,8.0,,,,non-Hispanic White,1.0,996
+1147,Male,24.0,,,Innie,non-Hispanic White,1.0,1000
+1156,Female,23.0,,,,non-Hispanic White,0.0,1000
+1164,Female,13.0,,,Innie,non-Hispanic White,1.0,1000
+1599,Male,35.0,0.0,none,Innie,non-Hispanic White,1.0,1000
+1172,Female,42.0,,,Innie,Other,0.0,1000
+982,Male,40.0,,,,non-Hispanic White,1.0,1000
+1108,Female,42.0,,,Innie,non-Hispanic White,0.0,998
+1116,Female,17.0,,,Innie,Other,1.0,1000
+1124,Female,28.0,,,Innie,non-Hispanic White,1.0,1000
+1132,Male,60.0,,,,Hispanic,0.0,1000
+1140,Male,42.0,,,Innie,Hispanic,1.0,1000
+1148,Male,26.0,,,Innie,non-Hispanic White,0.0,979
+1165,Male,1.0,,,Innie,,1.0,997
+1173,Male,29.0,,,Innie,non-Hispanic White,1.0,997
+1109,Male,23.0,,,Innie,non-Hispanic White,0.0,1000
+1117,Female,30.0,,,Innie,non-Hispanic White,1.0,998
+1133,Female,60.0,,,Innie,non-Hispanic White,1.0,1000
+1141,Male,32.0,,,Outie,non-Hispanic White,1.0,998
+1149,Female,18.0,,,Innie,non-Hispanic White,1.0,999
+1158,Female,44.0,,,Innie,non-Hispanic White,1.0,1000
+1166,Male,20.0,,,Outie,non-Hispanic White,1.0,997
+1174,Male,74.0,,,,,1.0,998
+1102,Female,6.0,,,Outie,non-Hispanic White,1.0,995
+1110,Female,23.0,,,Innie,,0.0,999
+1134,Male,27.0,,,,non-Hispanic White,1.0,1000
+1142,Male,24.0,,,Innie,Hispanic,0.0,997
+1150,Male,59.0,,,Innie,non-Hispanic White,1.0,1000
+1159,Female,40.0,,,Innie,non-Hispanic White,1.0,998
+1167,Male,21.0,,,Innie,non-Hispanic White,1.0,999
+1175,Female,18.0,,,Innie,non-Hispanic White,1.0,1000
+965,Female,37.0,7.0,7 days a week,Innie,non-Hispanic White,1.0,1000
+985,Male,12.0,,,Innie,non-Hispanic White,1.0,1000
+1127,Male,35.0,,,Innie,non-Hispanic White,1.0,997
+1135,Female,36.0,,,Innie,non-Hispanic White,1.0,995
+1143,Male,29.0,,,Innie,Hispanic,1.0,999
+1151,Female,19.0,,,Innie,non-Hispanic White,1.0,995
+1160,Female,30.0,,,Innie,non-Hispanic White,1.0,997
+1168,Female,18.0,,,Innie,non-Hispanic White,1.0,1000
+1176,Female,24.0,,,Innie,,1.0,1000
+1104,,,,,,,,998
+1112,Male,35.0,,,Innie,non-Hispanic White,1.0,993
+1120,Female,38.0,,,Innie,non-Hispanic White,1.0,1000
+1128,Female,1.0,,,Innie,non-Hispanic White,1.0,991
+1144,Female,31.0,,,Innie,non-Hispanic White,1.0,1000
+1152,Female,19.0,,,Innie,non-Hispanic White,1.0,996
+1324,Male,13.0,,,Outie,,1.0,954
+1332,Male,,,,,,0.0,907
+1340,Male,14.0,2.0,less than 7,Innie,non-Hispanic White,1.0,997
+1184,Female,27.0,,,,Other,1.0,998
+1193,,,,,,,,1000
+1201,Female,28.0,,,,,1.0,1000
+1247,Female,4.0,,,Innie,non-Hispanic White,0.0,930
+1261,Female,46.0,7.0,7 days a week,Innie,non-Hispanic White,1.0,972
+1271,Male,11.0,7.0,7 days a week,Outie,Hispanic,1.0,992
+1325,,,,,,,,901
+1333,Female,36.0,14.0,more than 7,Innie,non-Hispanic White,1.0,998
+1177,Male,2.0,,,Innie,Other,0.0,925
+1185,Female,4.0,,,,Other,1.0,996
+1194,Male,4.0,,,Innie,non-Hispanic White,1.0,991
+1202,Male,27.0,,,,Other,1.0,1000
+1249,Female,41.0,1.0,less than 7,Innie,non-Hispanic White,1.0,915
+1262,Male,46.0,,,Innie,non-Hispanic White,1.0,980
+1272,Male,51.0,2.0,less than 7,Innie,non-Hispanic White,,872
+1306,Female,37.0,5.0,less than 7,Innie,non-Hispanic White,1.0,282
+1317,Female,4.0,5.0,less than 7,Innie,Hispanic,1.0,1000
+1334,Female,34.0,1.0,less than 7,Innie,Hispanic,1.0,1000
+1178,Female,23.0,,,Innie,non-Hispanic White,1.0,1000
+1342,Male,33.0,4.0,less than 7,Innie,non-Hispanic White,1.0,1000
+1263,Female,48.0,,,Innie,non-Hispanic White,1.0,1000
+1335,Male,8.0,5.0,less than 7,Innie,non-Hispanic White,1.0,966
+1179,Female,17.0,,,Innie,Hispanic,1.0,1000
+1343,Female,35.0,7.0,7 days a week,Outie,non-Hispanic White,1.0,1000
+1251,Female,44.0,0.0,none,Innie,non-Hispanic White,1.0,967
+1311,Male,31.0,0.0,none,Innie,non-Hispanic White,1.0,992
+1336,Female,10.0,4.0,less than 7,Innie,non-Hispanic White,1.0,941
+1180,Male,17.0,,,,Other,1.0,1000
+1344,Female,13.0,,,,,,996
+1197,Female,44.0,,,,Hispanic,,1000
+1240,Female,9.0,,,Innie,non-Hispanic White,1.0,989
+1267,Male,4.0,7.0,7 days a week,,non-Hispanic White,1.0,1000
+1312,Female,35.0,0.0,none,Innie,non-Hispanic White,1.0,994
+1320,Male,9.0,,,Innie,,,1000
+1337,Female,11.0,,,Innie,,1.0,642
+1181,Male,18.0,,,Innie,non-Hispanic White,1.0,998
+1345,Male,49.0,0.0,none,Innie,non-Hispanic White,1.0,997
+1241,Male,5.0,3.0,less than 7,,non-Hispanic White,1.0,995
+1338,Female,45.0,7.0,7 days a week,Innie,non-Hispanic White,1.0,986
+1182,Female,23.0,,,,non-Hispanic White,1.0,984
+1191,Female,27.0,,,Innie,non-Hispanic White,1.0,990
+1256,Male,0.0,7.0,7 days a week,Outie,non-Hispanic White,1.0,1000
+1314,Male,10.0,1.0,less than 7,Innie,non-Hispanic White,1.0,978
+1322,Female,13.0,,,Innie,,,1000
+1183,Female,28.0,,,Innie,non-Hispanic White,1.0,1000
+YWL1161,Male,32.0,0.0,none,Innie,non-Hispanic White,0.0,1000
+1192,Male,13.0,,,Innie,non-Hispanic White,1.0,1000
+1257,Female,47.0,7.0,7 days a week,Innie,non-Hispanic White,1.0,1000
+1270,Male,11.0,7.0,7 days a week,Innie,Hispanic,1.0,997
+1304,Female,7.0,7.0,7 days a week,Innie,non-Hispanic White,1.0,543
+1315,Male,7.0,1.0,less than 7,Innie,non-Hispanic White,1.0,937
+1496,Male,34.0,0.0,none,Innie,non-Hispanic White,1.0,994
+1355,Female,63.0,3.5,less than 7,Innie,non-Hispanic White,1.0,962
+1363,Male,10.0,4.0,less than 7,Outie,non-Hispanic White,1.0,889
+1371,Female,43.0,2.0,less than 7,Innie,non-Hispanic White,1.0,999
+1397,Female,33.0,3.0,less than 7,,Hispanic,1.0,998
+1405,Male,15.0,7.0,7 days a week,Innie,Hispanic,1.0,980
+1419,Male,23.0,7.0,7 days a week,Innie,non-Hispanic White,1.0,991
+1435,Male,20.0,7.0,7 days a week,Innie,Other,1.0,1000
+1498,Female,27.0,0.0,none,Innie,non-Hispanic White,1.0,906
+1538,Male,35.0,0.0,none,Innie,non-Hispanic White,1.0,922
+1348,Male,31.0,1.0,less than 7,Innie,Hispanic,1.0,1000
+1364,Male,10.0,4.0,less than 7,Innie,non-Hispanic White,1.0,718
+1372,Female,59.0,7.0,7 days a week,Innie,non-Hispanic White,1.0,1000
+1406,Male,50.0,,,,,1.0,985
+1428,Male,9.0,2.0,less than 7,Innie,non-Hispanic White,1.0,598
+1436,Male,22.0,7.0,7 days a week,Innie,non-Hispanic White,1.0,1000
+1559,Male,21.0,0.0,none,Innie,Hispanic,,997
+1349,Female,52.0,1.0,less than 7,Innie,Hispanic,0.0,1000
+1571,Female,52.0,0.0,none,Innie,non-Hispanic White,1.0,1000
+1407,Male,48.0,3.0,less than 7,Innie,non-Hispanic White,1.0,999
+1421,Male,24.0,,,,,,982
+1437,Male,20.0,7.0,7 days a week,Innie,Hispanic,1.0,1000
+1560,Female,34.0,0.0,none,Innie,Hispanic,1.0,1000
+1350,Female,20.0,1.0,less than 7,Innie,Hispanic,1.0,1000
+YWL1054,Female,31.0,4.0,less than 7,Innie,non-Hispanic White,0.0,1000
+1366,,,,,,,,991
+1392,Male,8.0,5.0,less than 7,Outie,non-Hispanic White,1.0,1000
+1400,Male,10.0,0.0,none,Innie,non-Hispanic White,1.0,999
+1408,Female,37.0,7.0,7 days a week,Innie,non-Hispanic White,1.0,992
+1422,Male,20.0,2.0,less than 7,Innie,Hispanic,1.0,1000
+1430,Female,56.0,7.0,7 days a week,,Other,1.0,949
+1438,Male,21.0,0.0,none,Innie,non-Hispanic White,1.0,1000
+1565,Male,32.0,0.0,none,Innie,non-Hispanic White,1.0,996
+1351,Female,54.0,7.0,7 days a week,Innie,non-Hispanic White,1.0,991
+YWL1060,Female,28.0,1.5,less than 7,Innie,,0.0,1000
+1359,Male,0.0,1.0,less than 7,Innie,non-Hispanic White,1.0,999
+1393,Male,5.0,5.0,less than 7,Outie,non-Hispanic White,1.0,999
+1401,Female,36.0,4.0,less than 7,Innie,non-Hispanic White,1.0,1000
+1409,Female,14.0,5.0,less than 7,,Hispanic,1.0,990
+1423,Male,20.0,3.0,less than 7,Innie,Hispanic,1.0,999
+1431,Male,23.0,0.0,none,Innie,non-Hispanic White,1.0,1000
+1442,Female,68.0,,,,,,1000
+1566,Female,32.0,0.0,none,Innie,,1.0,1000
+1352,Female,38.0,7.0,7 days a week,Outie,non-Hispanic White,1.0,997
+YWL1062,Female,43.0,0.0,none,Innie,non-Hispanic White,0.0,1000
+1368,,,,,,,,887
+1394,Female,42.0,0.0,none,Innie,non-Hispanic White,1.0,1000
+1410,Female,57.0,,,Innie,non-Hispanic White,1.0,1000
+1424,Male,19.0,2.0,less than 7,Innie,Hispanic,1.0,999
+1432,Male,21.0,7.0,7 days a week,Innie,non-Hispanic White,1.0,950
+1567,Male,59.0,7.0,7 days a week,Innie,non-Hispanic White,1.0,994
+1353,Female,40.0,4.0,less than 7,Innie,non-Hispanic White,1.0,999
+YWL1074,Female,41.0,0.0,none,Innie,non-Hispanic White,0.0,972
+1361,Female,42.0,6.0,less than 7,Innie,non-Hispanic White,1.0,1000
+1395,Male,9.0,,,Innie,,1.0,810
+1411,Female,11.0,4.0,less than 7,Innie,non-Hispanic White,1.0,1000
+1433,Male,22.0,7.0,7 days a week,Innie,Hispanic,1.0,953
+1492,Female,24.0,0.0,none,Innie,non-Hispanic White,1.0,993
+1528,,68.0,3.0,less than 7,Innie,non-Hispanic White,1.0,948
+1568,Male,66.0,1.0,less than 7,Innie,non-Hispanic White,1.0,1000
+1354,Female,25.0,1.0,less than 7,Innie,,0.0,919
+YWL1196,Female,36.0,1.0,less than 7,Innie,non-Hispanic White,0.0,1000
+1370,Female,23.0,4.0,less than 7,Innie,Other,1.0,999
+1404,,,,,,,,989
+1412,Female,11.0,7.0,7 days a week,Outie,non-Hispanic White,1.0,996
+1426,Male,20.0,3.0,less than 7,Outie,non-Hispanic White,1.0,1000
+1434,Male,19.0,,,Innie,Hispanic,1.0,835
+YWL1198,Female,41.0,0.0,none,Innie,Other,1.0,1000
+YWL1207,Female,57.0,0.0,none,Innie,,0.0,1000
+YWL1232,Male,28.0,4.0,less than 7,Innie,non-Hispanic White,0.0,999
+CALS1007,Male,,0.25,less than 7,Outie,Hispanic,1.0,998
+CALS1015,Female,,7.0,7 days a week,Innie,non-Hispanic White,1.0,1000
+YWL1034,Male,62.0,0.0,none,Innie,non-Hispanic White,0.0,996
+YWL1010,Female,42.0,1.0,less than 7,Innie,non-Hispanic White,0.0,1000
+YWL1156,Male,29.0,7.0,7 days a week,Innie,non-Hispanic White,0.0,1000
+YWL1200,Male,65.0,,,Innie,non-Hispanic White,0.0,999
+YWL1212,Male,64.0,2.0,less than 7,Innie,non-Hispanic White,0.0,997
+YWL1233,Female,30.0,,,,,1.0,997
+YWL1219,Female,38.0,0.0,none,Innie,non-Hispanic White,0.0,1000
+CALS1008,Male,,7.0,7 days a week,Innie,non-Hispanic White,1.0,1000
+CALS1016,Female,,7.0,7 days a week,Innie,non-Hispanic White,1.0,991
+YWL1084,Female,37.0,,,Innie,non-Hispanic White,1.0,1000
+YWL1035,Female,25.0,0.0,none,Innie,non-Hispanic White,0.0,999
+YWL1127,Female,46.0,3.0,less than 7,Innie,non-Hispanic White,0.0,1000
+YWL1015,Male,26.0,1.0,less than 7,Innie,non-Hispanic White,0.0,504
+YWL1112,Female,41.0,,,Innie,,0.0,1000
+YWL1158,Male,38.0,7.0,7 days a week,Innie,non-Hispanic White,0.0,1000
+YWL1214,Male,41.0,0.0,none,Innie,non-Hispanic White,0.0,999
+YWL1248,Female,1.0,,,Innie,non-Hispanic White,,1000
+CALS1001,Male,,7.0,7 days a week,Innie,non-Hispanic White,1.0,999
+CALS1009,Male,,0.0,none,Innie,non-Hispanic White,1.0,999
+YWL1120,Female,52.0,3.0,less than 7,Innie,non-Hispanic White,0.0,1000
+YWL1037,Female,27.0,3.0,less than 7,Innie,non-Hispanic White,0.0,1000
+YWL1129,Female,33.0,1.5,less than 7,Innie,non-Hispanic White,1.0,1000
+YWL1020,Female,49.0,1.0,less than 7,Innie,non-Hispanic White,0.0,1000
+YWL1163,Female,30.0,7.0,7 days a week,Innie,non-Hispanic White,1.0,1000
+YWL1203,Female,32.0,0.0,none,Innie,,0.0,999
+YWL1217,Male,30.0,3.0,less than 7,Innie,non-Hispanic White,0.0,1000
+YWL1293,,,,,,,,1000
+CALS1002,Female,,0.0,none,Innie,non-Hispanic White,1.0,1000
+CALS1010,Male,,0.0,none,Innie,non-Hispanic White,1.0,992
+YWL1048,Female,47.0,,,Innie,non-Hispanic White,1.0,1000
+YWL1154,Female,58.0,1.0,less than 7,Innie,non-Hispanic White,0.0,1000
+YWL1057,Female,,0.0,none,Innie,non-Hispanic White,0.0,995
+YWL1132,Female,47.0,0.0,none,Innie,non-Hispanic White,0.0,1000
+YWL1199,Female,45.0,1.0,less than 7,Innie,non-Hispanic White,0.0,1000
+YWL1175,Female,,0.0,none,Innie,,0.0,1000
+YWL1218,Female,15.0,0.0,none,Innie,non-Hispanic White,0.0,1000
+YWL1044,Female,55.0,0.0,none,Innie,Other,0.0,999
+CALS1003,Male,,0.0,none,Innie,non-Hispanic White,1.0,880
+CALS1011,Male,,0.0,none,Innie,non-Hispanic White,1.0,1000
+YWL1051,Female,49.0,,,Innie,non-Hispanic White,0.0,1000
+YWL1192,Female,39.0,3.0,less than 7,Innie,Other,0.0,999
+YWL1063,Male,46.0,,,Innie,non-Hispanic White,0.0,999
+YWL1133,Female,26.0,0.0,none,Innie,non-Hispanic White,1.0,980
+YWL1061,Female,25.0,1.0,less than 7,Innie,non-Hispanic White,0.0,979
+YWL1067,Female,48.0,0.0,none,Innie,non-Hispanic White,0.0,968
+YWL1178,Female,29.0,4.0,less than 7,Innie,non-Hispanic White,0.0,999
+YWL1162,Female,42.0,5.0,less than 7,Innie,non-Hispanic White,0.0,1000
+YWL1223,Female,33.0,1.0,less than 7,Innie,non-Hispanic White,0.0,1000
+YWL1107,Female,26.0,0.0,none,Innie,non-Hispanic White,0.0,1000
+CALS1004,Male,,7.0,7 days a week,Innie,non-Hispanic White,1.0,1000
+YWL1071,Female,50.0,1.0,less than 7,Innie,non-Hispanic White,0.0,1000
+YWL1215,Male,30.0,7.0,7 days a week,Innie,non-Hispanic White,0.0,997
+YWL1077,Female,50.0,0.0,none,Innie,non-Hispanic White,0.0,1000
+YWL1150,Male,33.0,,,Innie,Hispanic,0.0,921
+YWL1099,Female,31.0,5.5,less than 7,Innie,non-Hispanic White,0.0,1000
+YWL1070,Male,24.0,1.0,less than 7,Innie,non-Hispanic White,0.0,1000
+YWL1183,Female,37.0,7.0,7 days a week,Innie,non-Hispanic White,0.0,1000
+YWL1167,Female,41.0,0.0,none,Innie,non-Hispanic White,0.0,1000
+YWL1226,Female,28.0,1.0,less than 7,Innie,non-Hispanic White,0.0,1000
+CALS1005,Female,,4.0,less than 7,Innie,non-Hispanic White,1.0,1000
+CALS1013,Female,,1.5,less than 7,Innie,non-Hispanic White,1.0,1000
+CALS1022,Female,,7.0,7 days a week,Innie,Hispanic,0.0,1000
+YWL1013,Male,56.0,1.5,less than 7,Innie,non-Hispanic White,1.0,998
+YWL1081,Male,29.0,,,Innie,non-Hispanic White,0.0,1000
+YWL1193,Female,58.0,1.0,less than 7,Innie,non-Hispanic White,0.0,1000
+YWL1101,Female,36.0,,,Innie,non-Hispanic White,0.0,1000
+YWL1072,Female,27.0,0.0,none,Innie,non-Hispanic White,0.0,990
+YWL1186,Female,51.0,,,Outie,non-Hispanic White,0.0,1000
+YWL1205,Female,30.0,6.0,less than 7,Innie,non-Hispanic White,0.0,1000
+YWL1228,Female,33.0,0.0,none,Innie,non-Hispanic White,0.0,996
+YWL1043,Male,58.0,7.0,7 days a week,Innie,non-Hispanic White,1.0,1000
+CALS1006,Female,,7.0,7 days a week,Innie,non-Hispanic White,1.0,1000
+CALS1014,Male,,6.0,less than 7,Outie,non-Hispanic White,1.0,799
+CALS1023,Female,,1.0,less than 7,Innie,non-Hispanic White,1.0,1000
+YWL1018,Male,61.0,7.0,7 days a week,Innie,non-Hispanic White,0.0,1000
+YWL1085,Female,41.0,,,Innie,non-Hispanic White,0.0,1000
+YWL1209,Female,34.0,0.0,none,Innie,,0.0,1000
+YWL1103,Female,32.0,3.0,less than 7,Innie,non-Hispanic White,0.0,998
+YWL1076,Male,45.0,,,Innie,non-Hispanic White,0.0,1000
+YWL1197,Female,36.0,3.0,less than 7,Innie,non-Hispanic White,0.0,1000

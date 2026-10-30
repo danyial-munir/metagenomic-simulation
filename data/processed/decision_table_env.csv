@@ -1,0 +1,10 @@
+decision,reason,rows_affected
+strip leading/trailing whitespace in all columns,"e.g. 'Innie ' vs 'Innie', 'NC ' vs 'NC'",10
+"'Unknown'/empty -> NaN, no imputation",missing stays missing; models use complete cases and report n,1657
+"Innie_or_outie: case-fold to {Innie, Outie}",'innie'/'Innie '/'Innie' are one label,72
+"Wash_Freq: decimal comma -> point, to float","'3,5' -> 3.5",7
+"Wash_Range inconsistent with Wash_Freq: keep Wash_Freq, drop Wash_Range from models","e.g. range 'none' with freq 0.25; 'None'/'none' also differ only by case (0 = never washes, a real value, not missing)",2
+Ethnicity: Latino->Hispanic; Black/Asian/Indian -> 'Other',"groups with n<10 cannot be estimated; Ethnicity_Quest (free text, 22 labels) not used",55
+Geography: keep only In_NC (is current state NC) from Current State; drop ZIP/city/country-by-age,ZIPs are >=70% missing and partly corrupt ('1130 ??'); 'Austria'/'France' sit in the State column,257
+"Drop columns with >= 90% missing: ['Country til age 12', 'ZIP code til age 12', 'Country ages 13-19', 'Zipcode ages 13-19']",no information to model,273
+Drop Reads,constant 1000 for all subjects (rarefied),273
