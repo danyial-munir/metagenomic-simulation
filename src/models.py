@@ -222,6 +222,48 @@ def loglik_lnm_is(x, mu, Sigma, n_draws, rng, scale=1.2):
     return logsumexp(w) - np.log(n_draws), ess
 
 
+# ---------------------------------------------------------------- M4: zero-inflated logistic-normal multinomial
+# Each non-reference category j is structurally ABSENT from a sample with probability pi_j (independently); present
+# categories share the reads through softmax over the present ones only. The reference (last column) is always present.
+
+def _zilnm_probs(Z, present):
+    L = np.c_[np.where(present, Z, -np.inf), np.zeros(len(Z))]
+    return np.exp(L - logsumexp(L, axis=1, keepdims=True))
+
+
+def sample_zilnm(mu, Sigma, pi, N, n, rng):
+    Z = rng.multivariate_normal(mu, Sigma, size=n)
+    P = _zilnm_probs(Z, rng.random(Z.shape) >= pi)
+    return rng.multinomial(N, P)
+
+
+def calibrate_zilnm(X, mu, Sigma, rng, n_sim=20000, max_iter=200, tol=1e-3):
+    """Method of moments for M4: find pi_j and a shifted ALR mean so that, per category, the expected PREVALENCE and the
+    expected MEAN COUNT equal the real ones (2 numbers per category, 2 parameters per category). Sigma is kept from M3.
+
+    simplification: calibrated, not fitted by maximum likelihood (the ZI likelihood sums over 2^(#zeros) presence patterns);
+    so M4 has no CV log-likelihood. Uses common random numbers (fixed Z noise and uniforms) and the exact expectations
+    P(x_j > 0 | p) = 1 - (1 - p_j)^N and E x_j = N p_j, so the iteration is deterministic and smooth.
+    Returns (mu4, pi, max relative error of prevalence, max relative error of mean).
+    """
+    X = np.asarray(X, float)
+    N = X.sum(1)[0]
+    assert np.all(X.sum(1) == N), "calibration assumes a constant depth"
+    t_prev, t_mean = (X[:, :-1] > 0).mean(0), X.mean(0) / N
+    E = rng.standard_normal((n_sim, len(mu))) @ np.linalg.cholesky(Sigma).T
+    U = rng.random(E.shape)
+    pi, m = np.zeros(len(mu)), mu.copy()
+    for _ in range(max_iter):
+        P = _zilnm_probs(E + m, U >= pi)
+        prev, mean = (1 - (1 - P[:, :-1]) ** N).mean(0), P.mean(0)
+        e_prev, e_mean = np.abs(prev / t_prev - 1).max(), np.abs(mean / t_mean - 1).max()
+        if max(e_prev, e_mean) < tol:
+            break
+        pi = np.clip(1 - (1 - pi) * t_prev / prev, 0, 0.95)
+        m = m + np.log(t_mean[:-1] / mean[:-1]) - np.log(t_mean[-1] / mean[-1])   # ALR shift, reference unchanged
+    return m, pi, e_prev, e_mean
+
+
 def sample_lnm(mu, Sigma, N, n, rng):
     Z = rng.multivariate_normal(mu, Sigma, size=n)
     P = np.exp(np.c_[Z, np.zeros(n)] - logsumexp(np.c_[Z, np.zeros(n)], axis=1, keepdims=True))

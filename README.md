@@ -51,7 +51,7 @@ uv pip install --python .venv/bin/python -r requirements.txt
 
 ```bash
 # 4. execute the notebooks top to bottom (from the notebooks/ folder)
-cd notebooks && ../.venv/bin/python -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.kernel_name=metagen --ExecutePreprocessor.timeout=1800 01_audit.ipynb 02_eda.ipynb 03_models.ipynb
+cd notebooks && ../.venv/bin/python -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.kernel_name=metagen --ExecutePreprocessor.timeout=1800 01_audit.ipynb 02_eda.ipynb 03_models.ipynb 04_validation.ipynb
 ```
 
 Or open them interactively: `.venv/bin/python -m jupyter lab`, choose the kernel **metagen (.venv)**, then
@@ -159,7 +159,7 @@ full resolution.
 | **M1** Dirichlet-multinomial | probabilities vary between samples via a Dirichlet; captures overdispersion |
 | **M2** DM / Dirichlet regression | covariates (age, sex, washing, navel type) shift the mean composition; top K taxa + `Other` |
 | **M3** logistic-normal multinomial | Gaussian on additive log-ratios with a shrunk or low-rank covariance; allows taxon–taxon correlation |
-| M4 zero-inflated (optional) | only if the data clearly need it |
+| M4 zero-inflated LNM | added in Phase 3 because M3 makes too few zeros; structural absence per taxon, calibrated by method of moments |
 
 ### Phase 3 – Validation of the simulations (planned)
 Simulate datasets with the real design from each model and compare with the real data on sparsity, richness and Shannon
@@ -187,7 +187,7 @@ analysis plan is written down and frozen before any power result is inspected.**
 | 0 Audit | `notebooks/01_audit.ipynb`, parser, cleaning, decision table | done |
 | 1 EDA | `notebooks/02_eda.ipynb`, diversity, distances, PCoA, PERMANOVA | done |
 | 2 Models | `notebooks/03_models.ipynb`, M0–M3, cross-validation, bootstrap | done |
-| 3 Validation | simulation vs real, bootstrap | not started |
+| 3 Validation | `notebooks/04_validation.ipynb`, simulation vs real, bootstrap, PERMANOVA, zero-inflated M4 | done |
 | 4 Power study | seasonal scenario | not started |
 | Writing | literature review, report, concept sheet complete | not started (concept sheet covers Phases 0–1) |
 
@@ -225,6 +225,19 @@ All numbers are produced by the notebooks (`data/processed/eda_summary.csv`).
   AIC prefers M2), but BIC prefers M1 and cross-validation shows no gain (+0.04 ± 0.06 nats per sample); adding wash frequency
   (n = 132) makes it slightly worse. The effects are real but small compared with the differences between people.
 
+**Phase 3 – validation** (`data/processed/valid_*.csv`, 200 simulated datasets per model):
+
+- **M3 is the most realistic simulator.** It reproduces 4 of 9 summary statistics inside its 95 % parametric band (M1: 0, M0: 0),
+  including mean Shannon, mean Simpson and the dominance of the top taxon. Real and M3-simulated samples are almost
+  indistinguishable by PERMANOVA (median R² 0.001–0.002), while M1 is clearly separable on Bray–Curtis (R² 0.014, always significant).
+- **M3 produces too few zeros**: 32 % zeros vs 41 % in the real data, so taxa appear in too many samples. The Dirichlet-multinomial
+  gets the zeros right but makes samples far too similar to each other.
+- Removing the 7 samples with < 80 % assigned reads changes nothing (CV gain of M3 over M1: 7.1 vs 7.3 nats per sample).
+- **M4 = M3 + zero inflation** (each taxon structurally absent from a person with probability πⱼ, 0.006–0.52, calibrated by
+  method of moments) fixes the zeros and improves several checks (variance, dispersion, Bray–Curtis distribution). By a decision
+  rule fixed before the comparison, M3 nevertheless stays the **primary simulator** (tie on the independent statistics; M4's
+  Aitchison PERMANOVA R² is slightly larger, 0.0020 vs 0.0008). **Both M3 and M4 are used in the power study**, M4 as sensitivity analysis.
+
 ---
 
 ## Repository layout
@@ -241,6 +254,7 @@ notebooks/
   01_audit.ipynb     # Phase 0
   02_eda.ipynb       # Phase 1
   03_models.ipynb    # Phase 2
+  04_validation.ipynb # Phase 3
 src/
   config.py          # global seed, paths, rarefaction depth
   parse.py           # taxonomy parser, counts recovery, taxon labelling and aggregation
@@ -268,6 +282,8 @@ Files written to `data/processed/`:
 | `counts_top20.csv` | **modelling matrix**: top 20 taxa + `Other` + `Unassigned` (D = 22), reference column `Other` last |
 | `model_comparison*.csv`, `model_m2_*.csv`, `model_laplace_check.csv` | model comparison, M2 tests and coefficients, Laplace accuracy check |
 | `model_params.npz` | fitted parameters of M0–M3 (used by the validation and power notebooks) |
+| `model_params_m4.npz` | calibrated M4 parameters (μ, Σ, π) |
+| `valid_*.csv` | validation tables: summary statistics, distributions, PERMANOVA, M4 calibration, final model |
 
 ---
 

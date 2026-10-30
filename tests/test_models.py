@@ -4,7 +4,7 @@ import itertools
 import numpy as np
 from scipy.optimize import check_grad
 
-from src.models import (dm_moments, fit_dm, fit_dm_reg, fit_lnm, fit_multinomial, loglik_dm, loglik_dm_reg,
+from src.models import (calibrate_zilnm, dm_moments, fit_dm, sample_zilnm, fit_dm_reg, fit_lnm, fit_multinomial, loglik_dm, loglik_dm_reg,
                         loglik_lnm, loglik_lnm_is, loglik_multinomial, sample_dm, sample_lnm)
 
 
@@ -73,3 +73,13 @@ def test_lnm_laplace_close_to_importance_sampling_and_fit():
         assert abs(la - is_) < 0.05 and ess > 1000
     mu_h, S_h, trace = fit_lnm(X, shrink=0.0)
     assert np.allclose(mu_h, mu, atol=0.1) and np.allclose(S_h, Sigma, atol=0.15)
+
+
+def test_zilnm_calibration_recovers_zero_inflation():
+    """Data from a zero-inflated LNM with known pi: calibrating from the true Sigma recovers pi and mu."""
+    rng = np.random.default_rng(4)
+    mu, Sigma, pi = np.array([0.0, -1.0, -2.0]), np.diag([1.0, 1.5, 1.0]), np.array([0.3, 0.0, 0.5])
+    X = sample_zilnm(mu, Sigma, pi, 500, 40000, rng)
+    m4, pi4, e_prev, e_mean = calibrate_zilnm(X, mu, Sigma, rng, n_sim=40000)
+    assert e_prev < 1e-3 and e_mean < 1e-3
+    assert np.allclose(pi4, pi, atol=0.03) and np.allclose(m4, mu, atol=0.1)

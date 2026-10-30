@@ -99,8 +99,38 @@ Entries are added phase by phase. **Phase 0 entries below.** Empty headings are 
 - **Assumptions:** subjects are independent and the sample is representative; percentile CIs can be off for strongly skewed or boundary parameters.
 - **Questions:** Why not the Hessian? (Possible: inverse observed Fisher information gives asymptotic SEs; the bootstrap needs no formula and works for derived quantities like ρ = 1/(1+A).) How many replicates? (Enough that the CI endpoints are stable: 500 for M1/M2, 100 for the slower M3.)
 
-## Phase 3 – validation (to do)
-Parametric and non-parametric bootstrap, KS/Wasserstein, PERMANOVA.
+## Phase 3 – validation
+
+### Parametric bootstrap (posterior-predictive-style check)
+- **Plain language:** pretend the fitted model is the truth, simulate many datasets with the real design (273 samples × 1000 reads), and compute the same statistic on each. This shows what values the model *can* produce. If the real value lies outside the central 95 % of them, the model fails to reproduce that feature.
+- **Formula:** band = [2.5 %, 97.5 %] quantiles of `T(Y_r)`, `Y_r ~ model(θ̂)`, r = 1…R (R = 200).
+- **Assumptions/caveat:** uses the plug-in θ̂, so the band ignores the uncertainty of θ̂ (slightly too narrow). With 273 samples and few parameters (M0, M1) the effect is small.
+- **Questions:** Difference from the non-parametric bootstrap? (Parametric: draws new data *from the model*, tests the model. Non-parametric: resamples *the real data*, gives the CI of the real statistic, no model needed.) Is "inside the band" proof the model is right? (No: it only fails to reject it for that statistic.)
+
+### Non-parametric bootstrap over samples
+- Resample subjects with replacement and recompute the statistic → 95 % CI of the real value.
+- **Pitfall handled:** for pairwise statistics (Bray–Curtis) a resampled subject paired with its own copy gives a distance of 0; those pairs are excluded.
+
+### Kolmogorov–Smirnov and Wasserstein distances
+- **KS:** `D = max_x |F_real(x) − F_sim(x)|`, the largest vertical gap between the two empirical CDFs. The p-value assumes independent observations (OK for per-sample metrics, *not* for pairwise distances).
+- **Wasserstein-1 ("earth mover's"):** `W = ∫ |F_real(x) − F_sim(x)| dx`, the average shift needed to move one distribution onto the other, in the units of the metric (interpretable: "Shannon differs by 0.2 nats on average").
+- **Calibration by simulation:** W is compared with its distribution when the model is true (W between other simulated datasets and the reference pool). Monte Carlo p = (1 + #{W_null ≥ W_real})/(1 + R). This works even when observations are dependent.
+- **Questions:** Why not only KS? (Its p-value needs independence; KS also focuses on one point of the CDF; W uses the whole shape and has units.) Why does a tiny p with large n not mean a bad model? (With enough data every model is rejected; look at the size of the discrepancy.)
+
+### PERMANOVA real vs simulated, PERMDISP
+- Pool real and simulated samples, label them, and test whether the label explains distance variance. A good simulator is *hard to tell apart*: R² ≈ 0.
+- PERMANOVA is sensitive to differences in centroid *and* spread; PERMDISP tests equal spread (distance of samples to their group centroid), to tell the two apart.
+- **Questions:** Why repeat over 20 simulated datasets? (One simulated dataset is random; the spread of R² shows the Monte Carlo variability.) Why focus on R² not p? (546 samples give power to detect trivial differences.)
+
+### Zero inflation (M4) and the method of moments
+- **Plain language:** a zero count can mean "present but not caught in 1000 reads" (sampling zero) or "not there at all" (structural zero). M3 only makes sampling zeros and so produces too few zeros (32 % vs 41 %). M4 adds a probability πⱼ that taxon j is truly absent from a person.
+- **Model:** presence bᵢⱼ ~ Bernoulli(1 − πⱼ); z ~ N(μ, Σ); pᵢ = softmax of z over the present taxa only (reference `Other` always present); reads ~ Multinomial(N, pᵢ).
+- **Method of moments:** choose parameters so that model expectations equal sample moments. Here 2 per category: prevalence `E[1(x_j>0)] = (1−π_j)·P(x_j>0 | present)` and mean count `E[x_j] = N·E[p_j]`; solved by fixed-point iteration with common random numbers (same random draws every iteration, so the update is smooth). Σ is kept from M3.
+- **Assumptions/limits:** absences independent between taxa and of everything else; Σ not re-estimated; not a likelihood fit → no CV log-likelihood or AIC for M4. Prevalence and mean richness are matched *by construction*, so they cannot be used to validate M4 (circular); Shannon, Simpson, dominance, Bray–Curtis, Taylor slope and PERMANOVA remain independent checks.
+- **Questions:** Why not maximum likelihood? (Each sample's likelihood sums over all presence patterns of its zero taxa, about 2⁹ on average, each needing a Laplace integral: possible but heavy, and harder to explain; moments give a transparent calibration.) Is matching prevalence "cheating"? (Only for the statistics it was tuned on; that is why those are excluded from M4's validation.) What does πⱼ = 0.5 mean? (Half the people do not carry that taxon at all.)
+
+### Choosing the final model
+- Rule fixed **before** looking at the results: the best CV model is the final simulator unless another model reproduces more of the summary statistics. Fixing the rule first avoids picking whichever check happens to favour a preferred model.
 
 ## Phase 4 – power study (to do)
 p-values, multiple testing (Benjamini–Hochberg FDR), type I error vs power, Monte Carlo error, cosinor regression.

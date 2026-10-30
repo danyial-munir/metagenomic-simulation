@@ -81,7 +81,7 @@ DataFrame; `pcoa(dm, number_of_dimensions=k)` avoids the "all dimensions" warnin
 ```
 data/raw/            # untouched originals (taxonomy.csv, environment.csv), read-only
 data/processed/      # tidy outputs of the notebooks (CSV), decision/sensitivity tables, eda_*.csv
-notebooks/           # 01_audit.ipynb, 02_eda.ipynb, 03_models.ipynb (later: 04_validation, 05_power)
+notebooks/           # 01_audit.ipynb, 02_eda.ipynb, 03_models.ipynb, 04_validation.ipynb (later: 05_power)
 src/                 # small reusable functions: config, parse, clean_env, eda, plotstyle, models (later: power)
 tests/               # pytest sanity checks (parser, diversity/CLR, later simulators and power code)
 figures/             # static PNG (300 dpi) of every report figure; some PDF versions optional
@@ -154,8 +154,8 @@ plus `assigned_reads`; ID index as string)
 | −1 Setup | venv, layout, seed, raw data copied | done |
 | 0 Audit | `01_audit.ipynb`, `src/parse.py`, `src/clean_env.py`, decision table, missingness map | **done, approved** |
 | 1 EDA | `02_eda.ipynb`, `src/eda.py`; sparsity, rank-abundance, Taylor, alpha/beta, PCoA, PERMANOVA | **done, approved** |
-| 2 Models | `03_models.ipynb`, `src/models.py`; M0, M1, M2 (DM regression), M3 (LNM); CV, AIC/BIC, LR test, bootstrap | **done, awaiting approval to start Phase 3** |
-| 3 Validation | simulate from each model, compare with real data, parametric + non-parametric bootstrap, KS/Wasserstein, PERMANOVA real vs simulated, pick final model | not started |
+| 2 Models | `03_models.ipynb`, `src/models.py`; M0, M1, M2 (DM regression), M3 (LNM); CV, AIC/BIC, LR test, bootstrap | **done, approved** |
+| 3 Validation | `04_validation.ipynb`; M4 (zero-inflated, calibrated) added at user's request; bootstrap, KS/Wasserstein, PERMANOVA/PERMDISP, sensitivity | **done, awaiting approval to start Phase 4** |
 | 4 Seasonal power | analysis plan frozen **first**; power over (A, n, K, depth, overdispersion); type I error at A = 0; negative control; sensitivity | not started |
 | Writing | literature review, report, README, concept sheet complete, final Restart-and-Run-All | not started |
 
@@ -191,13 +191,41 @@ Rough time left: Phase 3 4 d, Phase 4 5 d, writing 4–5 d, literature review 3 
   `model_comparison.csv`, `model_comparison_full_resolution.csv`, `model_m2_tests.csv`, `model_m2_coefficients.csv`,
   `model_laplace_check.csv`.
 
+### Phase 3 results (validation, D = 22, R = 200 simulated datasets per model)
+- Decision rule fixed before running: final model = best CV model unless another reproduces more summary statistics.
+- Summary statistics inside the model's 95 % parametric band: **M0 0/9, M1 0/9, M3 4/9** → **final simulator M3**.
+  M3 reproduces mean Shannon, mean Simpson, dominant share, 10 % Bray–Curtis quantile; close but outside on sd Shannon
+  (0.46 vs 0.54), median Bray–Curtis (0.67 vs 0.70).
+- **M3 weakness: too few zeros.** Zero share 0.32 vs real 0.41; mean richness 14.3 vs 12.6 (of 21); prevalence inside band for only
+  18 % of categories (M1: 95 %). The logistic-normal only creates zeros by multinomial sampling. M1 gets zeros right but
+  diversity/dispersion wrong (Shannon 1.70 vs 1.35, too homogeneous).
+- Distributions (Wasserstein, MC-calibrated): M3 closest everywhere (Shannon W = 0.07, KS p = 0.09; Simpson KS p = 0.12; BC W = 0.03),
+  but MC p < 0.05 for all (with 273 samples small differences are detectable).
+- PERMANOVA real vs simulated (20 reps, median R²): M3 Aitchison 0.0008 / BC 0.0018 (p < 0.05 in 0 % / 5 % of reps);
+  M1 0.0021 / 0.014 (BC significant in 100 %); M0 0.039 / 0.109. PERMDISP p ≈ 0.01 for M3 (slight dispersion difference).
+- Variance per category inside band: M3 64 %, M1 41 %, M0 0 %.
+- Sensitivity (drop 7 samples with < 80 % assigned): ρ 0.172 → 0.173, CV M3 − M1 = 7.06 ± 0.32 (vs 7.26) → no change.
+- **M4 (added after round 1, user's choice): M3 + structural absence πⱼ per category**, calibrated by method of moments
+  (`calibrate_zilnm`: prevalence and mean count matched per category; Σ kept from M3; no CV likelihood). π ranges 0.006
+  (Corynebacterium) to 0.52; μ shifts up to compensate. Params in `model_params_m4.npz`. Zero share and mean richness are
+  matched by construction for M4 (circular, excluded from its validation).
+- **Rule 2 (fixed before round 2):** M4 becomes primary if it reproduces ≥ as many of the 7 non-circular statistics as M3 AND
+  its median PERMANOVA R² is not larger for both distances. Result: independent stats M3 4 / M4 4; R² Bray–Curtis M4 0.0010 <
+  M3 0.0018 but Aitchison M4 0.0020 > M3 0.0008 → **M3 stays PRIMARY simulator, M4 is the sensitivity analysis in Phase 4.**
+  Do not overturn this post hoc. Note honestly that M4 is better on most other checks: prevalence in band 100 % (by
+  construction), variance in band 77 % vs 64 %, PERMDISP p 0.81/0.16 vs 0.014/0.012, Bray–Curtis distribution MC p 0.07 (M3 0.01),
+  richness distribution closer; M4 misses 10 % Bray–Curtis (0.39 vs 0.36) and sd Shannon.
+- Outputs: `valid_*.csv` in `data/processed/` (incl. `valid_m4_calibration.csv`, `valid_final_model.csv`), figures
+  `valid_m4_calibration`, `valid_summary_stats`, `valid_distributions`, `valid_prevalence_meanvar`, `valid_pcoa_overlay`.
+
 ## 7. Plan for the remaining phases (analysis decisions already made)
 
 **Phase 3 — validation.** Simulate datasets with the real design; compare sparsity, richness/Shannon distributions, per-taxon
 prevalence and mean–variance, Bray–Curtis distribution, PCoA overlay. Parametric bootstrap and non-parametric bootstrap over
 samples for CIs; KS/Wasserstein for distributions; PERMANOVA real vs simulated. Pick the final model with a written argument.
 
-**Phase 4 — seasonal scenario.** Driver `s(t) = cos(2π(month − φ)/12)`, optionally simulated temperature
+**Phase 4 — seasonal scenario.** Simulator: **M3 primary, M4 as sensitivity** (both at D = 22, params in `model_params.npz` /
+`model_params_m4.npz`). Driver `s(t) = cos(2π(month − φ)/12)`, optionally simulated temperature
 `T = seasonal sine + noise`. Perturb the log-ratio abundance of K taxa by amplitude A. Vary A, n, K, depth, baseline
 overdispersion. Tools: PERMANOVA (Bray–Curtis and Aitchison) with season/month; per-taxon cosinor regression on CLR
 (pseudocount 0.5, sensitivity checked) with Benjamini–Hochberg FDR. Report **type I error at A = 0 (must be ≈ 5 %)**, power
