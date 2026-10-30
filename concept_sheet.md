@@ -132,5 +132,49 @@ Entries are added phase by phase. **Phase 0 entries below.** Empty headings are 
 ### Choosing the final model
 - Rule fixed **before** looking at the results: the best CV model is the final simulator unless another model reproduces more of the summary statistics. Fixing the rule first avoids picking whichever check happens to favour a preferred model.
 
-## Phase 4 – power study (to do)
-p-values, multiple testing (Benjamini–Hochberg FDR), type I error vs power, Monte Carlo error, cosinor regression.
+## Phase 4 – power study
+
+### p-values, type I error and power
+- **p-value:** probability, *if H₀ were true*, of a result at least as extreme as the one observed. Not the probability that H₀ is true.
+- **Type I error (α):** rejecting a true H₀. With a valid test and α = 0.05, about 5 % of studies with *no* effect still "find" one.
+- **Power (1 − β):** probability of rejecting H₀ when a given effect is real. Depends on effect size, n, noise and the test.
+- **In a simulation study:** both are just rejection rates over many simulated studies: at A = 0 (type I error) and at A > 0 (power).
+- **Questions:** Why must type I error be checked first? (Power is meaningless if a test rejects too often under H₀; it would be "powerful" by being wrong.) Why 80 % power? (Convention: a 1-in-5 chance of missing a real effect, Cohen.)
+
+### Monte Carlo standard error
+- A rejection rate estimated from R replicates is a binomial proportion: `MCSE = √(p(1−p)/R)`. With R = 1000: ≤ 0.016 for any p, 0.007 at p = 0.05.
+- Type I error is "OK" if inside 0.05 ± 2·MCSE = [0.036, 0.064]. Wilson intervals are used for curves (better than ±1.96·SE near 0 and 1).
+- **Questions:** How did you choose R? (So that the MCSE is small compared with differences we care about: 0.016 is well below the 0.8 vs 0.9 power distinction.) Why a separate seed per replicate? (Results do not depend on execution order or parallel workers; any single replicate can be reproduced.)
+
+### Permutation tests (PERMANOVA) and exactness
+- Shuffling labels creates the null distribution of pseudo-F *from the data itself*. p = (1 + #{F_perm ≥ F_obs}) / (1 + B).
+- With B = 199, α(B+1) = 10 is an integer, so the test has exactly level α under exchangeability (the "+1" counts the observed labelling as one of the permutations).
+- **Assumption:** exchangeability under H₀, i.e. samples are interchangeable when there is no effect (true here: independent subjects, months assigned at random).
+- Fast implementation: Gower-centred matrix G = −½ J D² J; total SS = tr(G); between-group SS = tr(HG). Checked against scikit-bio.
+
+### Cosinor regression
+- **Model:** `y = b0 + b1 cos(2πm/12) + b2 sin(2πm/12) + ε`. Any sinusoid with a 12-month period and unknown phase φ is a combination of cos and sin (`A cos(ωt − φ) = A cos φ cos ωt + A sin φ sin ωt`), so no phase needs to be known.
+- **Test:** F-test of b1 = b2 = 0 with 2 and n − 3 df. Amplitude = √(b1² + b2²), peak month from atan2(b2, b1).
+- **Assumptions:** independent errors, constant variance, roughly normal residuals (CLR values are close enough at n ≥ 48; the null check confirms the level).
+- **Questions:** Why not use 4 seasons as in PERMANOVA? (Cosinor uses the smooth shape, so 2 parameters instead of 3 and more power for a sinusoidal effect.) What if the real pattern is not sinusoidal? (Power drops; seasons/month factor are more flexible.)
+
+### Multiple testing: Benjamini–Hochberg FDR
+- 20 taxa tested → at α = 0.05 about 1 false positive per study even with no effect.
+- **BH:** sort p-values p(1) ≤ … ≤ p(m); reject the k smallest where k = max{i : p(i) ≤ i·q/m}. Controls the **false discovery rate** E[false rejections / rejections] ≤ q (independence or positive dependence).
+- Under the global null, BH also controls the chance of *any* false rejection at q, so "at least one BH rejection" is a valid study-level test.
+- **Closure caveat:** shifting K taxa changes the CLR of all taxa slightly (CLR subtracts the mean log), so some "unaffected" taxa get a small real seasonal signal in CLR space. Their rejections count as false here, so the empirical FDR can exceed q. This is a property of compositional data, not a bug in BH.
+- **Questions:** FDR vs FWER? (FWER, e.g. Bonferroni, controls P(any false positive): strict, low power. FDR controls the *proportion* of false discoveries: more power for screening many taxa.)
+
+### Negative control
+- Same data with a real effect (A = 1.0), but the month labels shuffled before testing. Any signal is destroyed, so the rejection rate must return to α. This checks the whole pipeline (simulation + tests) end to end, not just the test formula.
+
+### Minimum detectable effect (MDE)
+- The smallest amplitude with power ≥ 0.80 at a given n, by linear interpolation between grid values of A. A = 0.5 means peak-to-trough fold change e^{2A} = 2.7 relative to `Other`.
+- **Our numbers (main scenario):** cosinor + BH at n = 288 detects A = 0.66 (×3.8); PERMANOVA Aitchison needs A = 1.05 (×8); Bray–Curtis never reaches 80 % on the grid. Reason: the per-person spread of a log-ratio (SD 2.0–3.1) is large compared with these seasonal shifts.
+- **Questions:** Why is cosinor more powerful than PERMANOVA? (It tests each taxon for the exact shape imposed, with 2 df; PERMANOVA spreads the signal over all 21 parts and 3 df, and 18 of 21 parts carry no signal.) Why is Bray–Curtis weakest? (Dominated by the most abundant taxa, which carry most of the between-person variation; the affected taxa are often low-abundance.) Why does more depth not help? (Counting noise is already small compared with biological between-person variation; Σ × 0.5 helps a lot, depth × 10 barely.)
+
+### Amendments to a frozen plan
+- Honest procedure when a pre-specified quantity turns out to be ill-defined: keep reporting it, add the corrected quantity as a dated amendment with its reason, never silently replace it. Here: the pre-specified "FDR among replicates with ≥ 1 rejection" is the positive FDR, which BH does not control; the standard FDR was added (it stays ≈ 0.05, up to 0.07 at large A because of closure).
+
+### Frozen analysis plan
+- Written and hashed (SHA-256) before any power result; the notebook stops if the file changed. It prevents choosing tests, thresholds or grids after seeing which ones "work" (a form of p-hacking / garden of forking paths).

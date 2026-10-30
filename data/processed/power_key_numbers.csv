@@ -1,0 +1,19 @@
+,value
+MDE PERMANOVA Aitchison n=96 (M3),inf
+MDE PERMANOVA Aitchison n=96 (M4),inf
+MDE PERMANOVA Aitchison n=288 (M3),1.0475113122171946
+MDE PERMANOVA Aitchison n=288 (M4),1.2376237623762376
+MDE PERMANOVA Bray-Curtis n=96 (M3),inf
+MDE PERMANOVA Bray-Curtis n=96 (M4),inf
+MDE PERMANOVA Bray-Curtis n=288 (M3),inf
+MDE PERMANOVA Bray-Curtis n=288 (M4),inf
+MDE cosinor CLR + BH n=96 (M3),1.1976744186046513
+MDE cosinor CLR + BH n=96 (M4),1.4494382022471912
+MDE cosinor CLR + BH n=288 (M3),0.664187643020595
+MDE cosinor CLR + BH n=288 (M4),0.807511737089202
+type I outside band,2.0
+type I max,0.063
+type I min,0.035
+negative control max,0.054
+negative control min,0.032
+max standard FDR main (A>0),0.07081536796536797

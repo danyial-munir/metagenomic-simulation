@@ -81,8 +81,8 @@ DataFrame; `pcoa(dm, number_of_dimensions=k)` avoids the "all dimensions" warnin
 ```
 data/raw/            # untouched originals (taxonomy.csv, environment.csv), read-only
 data/processed/      # tidy outputs of the notebooks (CSV), decision/sensitivity tables, eda_*.csv
-notebooks/           # 01_audit.ipynb, 02_eda.ipynb, 03_models.ipynb, 04_validation.ipynb (later: 05_power)
-src/                 # small reusable functions: config, parse, clean_env, eda, plotstyle, models (later: power)
+notebooks/           # 01_audit, 02_eda, 03_models, 04_validation, 05_power (.ipynb), run in this order
+src/                 # small reusable functions: config, parse, clean_env, eda, plotstyle, models, power
 tests/               # pytest sanity checks (parser, diversity/CLR, later simulators and power code)
 figures/             # static PNG (300 dpi) of every report figure; some PDF versions optional
 report/              # report source + final PDF (not started)
@@ -155,11 +155,12 @@ plus `assigned_reads`; ID index as string)
 | 0 Audit | `01_audit.ipynb`, `src/parse.py`, `src/clean_env.py`, decision table, missingness map | **done, approved** |
 | 1 EDA | `02_eda.ipynb`, `src/eda.py`; sparsity, rank-abundance, Taylor, alpha/beta, PCoA, PERMANOVA | **done, approved** |
 | 2 Models | `03_models.ipynb`, `src/models.py`; M0, M1, M2 (DM regression), M3 (LNM); CV, AIC/BIC, LR test, bootstrap | **done, approved** |
-| 3 Validation | `04_validation.ipynb`; M4 (zero-inflated, calibrated) added at user's request; bootstrap, KS/Wasserstein, PERMANOVA/PERMDISP, sensitivity | **done, awaiting approval to start Phase 4** |
-| 4 Seasonal power | analysis plan frozen **first**; power over (A, n, K, depth, overdispersion); type I error at A = 0; negative control; sensitivity | not started |
+| 3 Validation | `04_validation.ipynb`; M4 (zero-inflated, calibrated) added at user's request; bootstrap, KS/Wasserstein, PERMANOVA/PERMDISP, sensitivity | **done, approved** |
+| 4 Seasonal power | `05_power.ipynb`, `src/power.py`; frozen plan `report/analysis_plan_phase4.md` (approved by user, 1 dated amendment) | **done, awaiting approval to start writing** |
 | Writing | literature review, report, README, concept sheet complete, final Restart-and-Run-All | not started |
 
-Rough time left: Phase 3 4 d, Phase 4 5 d, writing 4–5 d, literature review 3 d spread out.
+Remaining: literature review (verified references only), report (15–25 pp), finish concept sheet, README check, final
+Restart-and-Run-All of all five notebooks.
 
 ### Key EDA findings that drive the models
 - **Strong overdispersion:** Taylor slope b = 1.84 (bootstrap 95 % CI 1.82–1.89; multinomial = 1). Every taxon has > 2× the
@@ -218,6 +219,30 @@ Rough time left: Phase 3 4 d, Phase 4 5 d, writing 4–5 d, literature review 3 
 - Outputs: `valid_*.csv` in `data/processed/` (incl. `valid_m4_calibration.csv`, `valid_final_model.csv`), figures
   `valid_m4_calibration`, `valid_summary_stats`, `valid_distributions`, `valid_prevalence_meanvar`, `valid_pcoa_overlay`.
 
+### Phase 4 results (power study; R = 1000 replicates × 145 grid points, 225 s on 10 cores)
+- **Frozen plan:** `report/analysis_plan_phase4.md`. Whole-file hash at freezing `dfd32c3c…0285`; the notebook now checks the
+  SHA-256 of the text ABOVE `## Amendments` = `53a474f05a8a813d429dcb5ec30c89fe46aba5aa1f06548b65a9bf63fc49d35d`.
+  Never edit above that heading; add dated amendments below it.
+- **Amendment 1 (after first results):** the pre-specified FDR (over replicates with ≥ 1 rejection) is the *positive* FDR, which
+  BH does not control; added the standard FDR (0 when no rejection). Both reported. No other change.
+- **Validity:** type I error at A = 0: 58/60 rates inside 0.036–0.064, the 2 outside are conservative (0.035, 0.035–0.036);
+  range 0.035–0.063. Negative control (A = 1, shuffled labels): 0.032–0.054, 4/15 slightly below the band (conservative,
+  none above). No inflated false-positive rate anywhere.
+- **Main (M3, K = 3, depth 1000), 80 % power MDE (A, fold change e^{2A}):**
+  cosinor CLR + BH: n = 96 → 1.20 (×11), n = 192 → 0.80 (×5), **n = 288 → 0.66 (×3.8)**, n = 384 → 0.57 (×3.1), n = 48 not reached.
+  PERMANOVA Aitchison: n = 288 → 1.05 (×8), n = 384 → 0.92, n ≤ 96 not reached. **PERMANOVA Bray–Curtis never reaches 80 %**
+  (max 0.78 at n = 384, A = 1.5). Cosinor is the most powerful tool throughout; Bray–Curtis the weakest.
+- **M4 (zero-inflated) lowers power:** cosinor MDE n = 288 → 0.81 (vs 0.66), PERMANOVA Aitchison 1.24 (vs 1.05).
+- **Sensitivity (n = 288, A = 1 / 0.5):** K = 5 raises power (cosinor 0.72 at A = 0.5 vs 0.51), K = 1 lowers it (PERMANOVA ≈ useless:
+  0.20 at A = 1); Σ × 2 strongly lowers (PERMANOVA 0.44 at A = 1 vs 0.78), Σ × 0.5 raises (0.99); depth 10 000 slightly lowers
+  PERMANOVA Aitchison (0.73 vs 0.78) and slightly raises cosinor (0.58 vs 0.51 at A = 0.5) → more reads do not buy much because
+  between-person variation, not counting noise, dominates.
+- **Cosinor FDR:** standard FDR 0.03–0.05 up to A = 0.75, rising to 0.056–0.071 at A ≥ 1 for n ≥ 192 → small inflation from
+  closure (CLR shift of unaffected taxa). Positive FDR near 0.8–0.9 at small A by construction.
+- Outputs: `power_grid.csv`, `power_raw.csv`, `power_summary.csv`, `power_type1.csv`, `power_mde.csv`, `power_key_numbers.csv`;
+  figures `power_schematic`, `power_type1`, `power_curves_main`, `power_vs_n`, `power_heatmap`, `power_mde`, `power_cosinor_fdr`,
+  `power_sensitivity`.
+
 ## 7. Plan for the remaining phases (analysis decisions already made)
 
 **Phase 3 — validation.** Simulate datasets with the real design; compare sparsity, richness/Shannon distributions, per-taxon
@@ -245,8 +270,9 @@ Static PNG/PDF in `figures/`; matplotlib for the report, plotly only for explora
 Existing: parser (table end, counts exact, richness row identity, aggregation conserves counts), alpha diversity vs
 scikit-bio, CLR rows sum to 0, Aitchison scale invariance; models (probabilities sum to 1 over all count vectors, DM →
 multinomial as A → ∞, DM simulator mean/variance match theory, ML fits recover known parameters, M2 analytic gradient vs finite
-differences, LNM Laplace vs importance sampling in low dimension, LNM fit recovers μ and Σ). **To add:** power code (type I
-error ≈ 0.05 at A = 0, within Monte Carlo error). Keep tests small and fast; no frameworks beyond pytest.
+differences, LNM Laplace vs importance sampling in low dimension, LNM fit recovers μ and Σ, M4 calibration recovers π and μ);
+power (pseudo-F equals scikit-bio, permutation test type I error ≈ 0.05, cosinor size and power, simulator imposes ±A with
+balanced months). 16 tests, all pass. Keep tests small and fast; no frameworks beyond pytest.
 
 ## 10. Literature (to do; verify every reference by searching)
 

@@ -4,8 +4,8 @@ Exam project for **Statistical Data Analysis for Applied Physics**.
 Topic (approved by the professors): *Simulation of metagenomic data (relative abundances) to study seasonal dynamics of
 bacterial populations*, adapted to a human skin (belly-button) microbiome dataset.
 
-> **Status:** Phase 0 (data audit), Phase 1 (exploratory analysis) and Phase 2 (generative models) are complete.
-> Phases 3–4 (validation, seasonal power study) and the written deliverables are not started. See [Project status](#project-status).
+> **Status:** all analysis phases are complete: data audit, exploratory analysis, generative models, validation and the
+> seasonal power study. The written deliverables (literature review, report) are not started. See [Project status](#project-status).
 
 ---
 
@@ -51,7 +51,7 @@ uv pip install --python .venv/bin/python -r requirements.txt
 
 ```bash
 # 4. execute the notebooks top to bottom (from the notebooks/ folder)
-cd notebooks && ../.venv/bin/python -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.kernel_name=metagen --ExecutePreprocessor.timeout=1800 01_audit.ipynb 02_eda.ipynb 03_models.ipynb 04_validation.ipynb
+cd notebooks && ../.venv/bin/python -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.kernel_name=metagen --ExecutePreprocessor.timeout=1800 01_audit.ipynb 02_eda.ipynb 03_models.ipynb 04_validation.ipynb 05_power.ipynb
 ```
 
 Or open them interactively: `.venv/bin/python -m jupyter lab`, choose the kernel **metagen (.venv)**, then
@@ -168,7 +168,7 @@ distributions, per-taxon prevalence and mean–variance, the Bray–Curtis distr
 Wasserstein; **PERMANOVA of real vs simulated** (a good simulator is hard to tell apart). The final model is chosen with a
 written argument.
 
-### Phase 4 – Seasonal scenario / power study (planned)
+### Phase 4 – Seasonal scenario / power study (done)
 Add the driver `s(t) = cos(2π(month − φ)/12)` (optionally a simulated temperature covariate), perturb the log-ratio abundance
 of *K* taxa by amplitude *A*, and vary *A*, sample size *n*, *K*, sequencing depth and baseline overdispersion.
 Detection tools: PERMANOVA (Bray–Curtis and Aitchison) with season or month, and per-taxon **cosinor regression** on CLR
@@ -188,7 +188,7 @@ analysis plan is written down and frozen before any power result is inspected.**
 | 1 EDA | `notebooks/02_eda.ipynb`, diversity, distances, PCoA, PERMANOVA | done |
 | 2 Models | `notebooks/03_models.ipynb`, M0–M3, cross-validation, bootstrap | done |
 | 3 Validation | `notebooks/04_validation.ipynb`, simulation vs real, bootstrap, PERMANOVA, zero-inflated M4 | done |
-| 4 Power study | seasonal scenario | not started |
+| 4 Power study | `notebooks/05_power.ipynb`, frozen plan `report/analysis_plan_phase4.md` | done |
 | Writing | literature review, report, concept sheet complete | not started (concept sheet covers Phases 0–1) |
 
 Work proceeds one phase at a time, with a summary and a go-ahead before the next phase starts.
@@ -238,6 +238,26 @@ All numbers are produced by the notebooks (`data/processed/eda_summary.csv`).
   rule fixed before the comparison, M3 nevertheless stays the **primary simulator** (tie on the independent statistics; M4's
   Aitchison PERMANOVA R² is slightly larger, 0.0020 vs 0.0008). **Both M3 and M4 are used in the power study**, M4 as sensitivity analysis.
 
+**Phase 4 – seasonal power study** (`data/processed/power_*.csv`; 145 scenarios × 1000 simulated studies; plan frozen beforehand):
+
+- **The tests are valid:** with no seasonal effect they reject 3.5–6.3 % of the time (target 5 %), and a negative control with
+  shuffled month labels gives 3.2–5.4 %.
+- **Minimum detectable effect at 80 % power** (amplitude A of the log-ratio; peak-to-trough fold change e^{2A}):
+
+  | n | cosinor on CLR + BH | PERMANOVA Aitchison | PERMANOVA Bray–Curtis |
+  |---|---|---|---|
+  | 96 | A = 1.20 (×11) | not reached | not reached |
+  | 192 | 0.80 (×5) | 1.33 (×14) | not reached |
+  | **288 (≈ real study)** | **0.66 (×3.8)** | 1.05 (×8) | not reached |
+  | 384 | 0.57 (×3.1) | 0.92 (×6) | not reached |
+
+- **Per-taxon cosinor regression is the most powerful tool**, Bray–Curtis PERMANOVA the weakest. A study the size of ours
+  could only detect seasonal changes of roughly a fourfold peak-to-trough swing in a few taxa.
+- More affected taxa or less between-person variation raise power; more sequencing depth barely helps (between-person variation
+  dominates); with zero inflation (M4) the detectable effect is about 20 % larger.
+- Benjamini–Hochberg keeps the false discovery rate near 5 %; it rises slightly (to 7 %) for large effects because of
+  compositional closure.
+
 ---
 
 ## Repository layout
@@ -255,12 +275,14 @@ notebooks/
   02_eda.ipynb       # Phase 1
   03_models.ipynb    # Phase 2
   04_validation.ipynb # Phase 3
+  05_power.ipynb     # Phase 4 (about 4 minutes on 10 cores)
 src/
   config.py          # global seed, paths, rarefaction depth
   parse.py           # taxonomy parser, counts recovery, taxon labelling and aggregation
   clean_env.py       # metadata cleaning with a decision log
   eda.py             # alpha diversity, CLR, Bray-Curtis, Aitchison
-  models.py          # M0-M3: fit, log-likelihood, simulate; Laplace and importance-sampling likelihood for M3
+  models.py          # M0-M4: fit/calibrate, log-likelihood, simulate; Laplace and importance-sampling likelihood for M3
+  power.py           # seasonal simulator, fast PERMANOVA, cosinor regression, grid runner
   plotstyle.py       # one figure style, colour-blind-safe (Okabe-Ito) palette
 tests/               # pytest sanity checks
 figures/             # static PNGs of every report figure (300 dpi)
