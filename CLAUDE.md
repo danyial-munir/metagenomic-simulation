@@ -85,8 +85,8 @@ notebooks/           # 01_audit, 02_eda, 03_models, 04_validation, 05_power (.ip
 src/                 # small reusable functions: config, parse, clean_env, eda, plotstyle, models, power
 tests/               # pytest sanity checks (parser, diversity/CLR, later simulators and power code)
 figures/             # static PNG (300 dpi) of every report figure; some PDF versions optional
-report/              # report source + final PDF (not started)
-literature/          # review + BibTeX (not started)
+report/              # report.md (source), build_report.py (md -> html -> pdf via mistune + headless Chrome), report.pdf, frozen Phase 4 plan
+literature/          # literature_review.md + references.bib (verified)
 concept_sheet.md     # explanations for the oral defence (kept current)
 requirements.txt     # pinned versions
 ```
@@ -108,9 +108,12 @@ Conventions:
 
 ## 5. The data (verified facts — do not re-derive)
 
-Source is probably the belly-button microbiome study (Hulcr et al., "A jungle in there", PLoS ONE 2012), **but this has
-not been verified**: the file has 273 subjects, while I recall that study as having about 60 participants (sample IDs
-`YWL…`/`CALS…` suggest citizen-science and NC State cohorts). Check provenance in the literature step before citing.
+Provenance (checked in the literature step, still **unresolved**): the data come from the Belly Button Biodiversity
+citizen-science project, whose first paper is Hulcr et al. 2012 (PLoS ONE 7(11): e47712; 60 volunteers, rarefied to **400**
+reads, 67 phylotypes on average, 6 phylotypes in > 80 % of people). Our file (273 subjects, **1000** reads, genus table) is
+NOT that paper's analysis table. The Dryad package (doi:10.5061/dryad.q8f74) holds raw sequences + a mapping file (downloads
+returned HTTP 403). Cite Hulcr 2012 for the project and state that the exact origin of this table is unverified, unless the
+user supplies its source.
 
 **`taxonomy.csv`**
 - 7 taxonomy columns (`Kingdom/Domain, Phylum, Class, Order, Family, Genus, Family_Genus`) then 273 sample columns.
@@ -157,7 +160,7 @@ plus `assigned_reads`; ID index as string)
 | 2 Models | `03_models.ipynb`, `src/models.py`; M0, M1, M2 (DM regression), M3 (LNM); CV, AIC/BIC, LR test, bootstrap | **done, approved** |
 | 3 Validation | `04_validation.ipynb`; M4 (zero-inflated, calibrated) added at user's request; bootstrap, KS/Wasserstein, PERMANOVA/PERMDISP, sensitivity | **done, approved** |
 | 4 Seasonal power | `05_power.ipynb`, `src/power.py`; frozen plan `report/analysis_plan_phase4.md` (approved by user, 1 dated amendment) | **done, awaiting approval to start writing** |
-| Writing | literature review, report, README, concept sheet complete, final Restart-and-Run-All | not started |
+| Writing | literature review **done** (`literature/literature_review.md`, `references.bib`, 32 entries, verification table); report done: `report/report.md` → `report/build_report.py` → `report.html` + `report.pdf` (25 pp incl. appendices, 22 figures). **Final run-through done (2026-10-30):** all 5 notebooks re-executed in order from raw data (≈ 7 min), no errors, every output file rewritten, all 29 CSV/NPZ outputs and 28 figures byte-identical to the previous run, raw files identical to the originals in ~/Downloads, 16/16 tests pass, report rebuilt | done |
 
 Remaining: literature review (verified references only), report (15–25 pp), finish concept sheet, README check, final
 Restart-and-Run-All of all five notebooks.
@@ -274,7 +277,9 @@ differences, LNM Laplace vs importance sampling in low dimension, LNM fit recove
 power (pseudo-F equals scikit-bio, permutation test type I error ≈ 0.05, cosinor size and power, simulator imposes ±A with
 balanced months). 16 tests, all pass. Keep tests small and fast; no frameworks beyond pytest.
 
-## 10. Literature (to do; verify every reference by searching)
+## 10. Literature (done: `literature/literature_review.md`; keep this list for context)
+Use the keys in `literature/references.bib` in the report. Entries with "and others" have unchecked co-author lists; the
+verification table at the end of the review lists every flag. Do not add a reference without checking it online first.
 
 Topics: microbiome sequencing and compositionality; Aitchison geometry; multinomial, Dirichlet-multinomial and
 logistic-normal models; simulators of microbiome data; PERMANOVA and diversity metrics; seasonality in microbial

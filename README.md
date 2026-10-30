@@ -5,7 +5,8 @@ Topic (approved by the professors): *Simulation of metagenomic data (relative ab
 bacterial populations*, adapted to a human skin (belly-button) microbiome dataset.
 
 > **Status:** all analysis phases are complete: data audit, exploratory analysis, generative models, validation and the
-> seasonal power study. The written deliverables (literature review, report) are not started. See [Project status](#project-status).
+> seasonal power study. The literature review and a full report draft ([report/report.pdf](report/report.pdf)) are written.
+> See [Project status](#project-status).
 
 ---
 
@@ -54,7 +55,12 @@ uv pip install --python .venv/bin/python -r requirements.txt
 cd notebooks && ../.venv/bin/python -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.kernel_name=metagen --ExecutePreprocessor.timeout=1800 01_audit.ipynb 02_eda.ipynb 03_models.ipynb 04_validation.ipynb 05_power.ipynb
 ```
 
-Or open them interactively: `.venv/bin/python -m jupyter lab`, choose the kernel **metagen (.venv)**, then
+```bash
+# 5. rebuild the report (Markdown -> HTML -> PDF; needs Google Chrome for the PDF step)
+.venv/bin/python report/build_report.py
+```
+
+Or open the notebooks interactively: `.venv/bin/python -m jupyter lab`, choose the kernel **metagen (.venv)**, then
 *Kernel → Restart and Run All*. Notebook 01 must run before 02 (02 reads the files 01 writes to `data/processed/`).
 
 Without `uv`:
@@ -109,9 +115,9 @@ Two files in `data/raw/` (never modified):
 | `taxonomy.csv` | taxa in rows, 273 samples in columns; 7 taxonomy columns (`Kingdom … Genus`, `Family_Genus`) |
 | `environment.csv` | one row per subject (273): ethnicity, gender, age, belly-button washing frequency, navel type (innie/outie), location, … |
 
-**Provenance (unverified):** the data are probably from the belly-button microbiome study (Hulcr et al., *A jungle in
-there*, PLoS ONE 2012). However that study, as far as I recall, had about 60 participants, whereas this file has 273, so the
-exact origin and the correct citation must be confirmed in the literature step.
+**Provenance (partly verified):** the data come from the Belly Button Biodiversity citizen-science project (Hulcr et al. 2012,
+*PLoS ONE*). That paper analysed 60 volunteers rarefied to 400 reads; this file has 273 subjects rarefied to 1000 reads, so it is
+not the published analysis table and its exact origin is unverified (see [References](#references)).
 
 ### Data audit: what was found (Phase 0)
 
@@ -189,7 +195,7 @@ analysis plan is written down and frozen before any power result is inspected.**
 | 2 Models | `notebooks/03_models.ipynb`, M0–M3, cross-validation, bootstrap | done |
 | 3 Validation | `notebooks/04_validation.ipynb`, simulation vs real, bootstrap, PERMANOVA, zero-inflated M4 | done |
 | 4 Power study | `notebooks/05_power.ipynb`, frozen plan `report/analysis_plan_phase4.md` | done |
-| Writing | literature review, report, concept sheet complete | not started (concept sheet covers Phases 0–1) |
+| Writing | literature review, report, concept sheet | review and report draft done; concept sheet covers all phases |
 
 Work proceeds one phase at a time, with a summary and a go-ahead before the next phase starts.
 
@@ -286,8 +292,8 @@ src/
   plotstyle.py       # one figure style, colour-blind-safe (Okabe-Ito) palette
 tests/               # pytest sanity checks
 figures/             # static PNGs of every report figure (300 dpi)
-report/              # report source and final PDF (not started)
-literature/          # review and BibTeX (not started)
+report/              # report.md (source), build_report.py, report.html, report.pdf, frozen Phase 4 plan
+literature/          # literature_review.md and references.bib
 ```
 
 Files written to `data/processed/`:
@@ -368,7 +374,10 @@ Files written to `data/processed/`:
 
 ## References
 
-The full, verified literature review is still to be written (`literature/`). Starting points that are **to be checked, not
-yet verified**: Hulcr et al. 2012; Aitchison (1982, 1986) on compositional data; Holmes et al. 2012 (Dirichlet-multinomial
-mixtures); Xia et al. 2013 (logistic-normal multinomial); Anderson 2001 (PERMANOVA); McMurdie & Holmes 2014 (rarefaction);
-Gloor et al. 2017 (compositional pitfalls).
+The literature review is in [literature/literature_review.md](literature/literature_review.md) and the bibliography (32 entries)
+in [literature/references.bib](literature/references.bib). Every reference was checked online. A verification table at the end of
+the review flags the few entries whose co-author list or article number could not be confirmed.
+
+**Dataset provenance (unresolved):** the data come from the Belly Button Biodiversity citizen-science project (Hulcr et al. 2012,
+*PLoS ONE* 7(11): e47712). That paper analysed 60 volunteers rarefied to 400 reads, whereas this table has 273 subjects rarefied
+to 1000 reads, so it is a different processing of the project's samples whose exact origin could not be verified.
