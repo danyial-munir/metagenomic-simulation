@@ -4,8 +4,8 @@ Exam project for **Statistical Data Analysis for Applied Physics**.
 Topic (approved by the professors): *Simulation of metagenomic data (relative abundances) to study seasonal dynamics of
 bacterial populations*, adapted to a human skin (belly-button) microbiome dataset.
 
-> **Status:** Phase 0 (data audit) and Phase 1 (exploratory analysis) are complete. Phases 2–4 (models, validation,
-> seasonal power study) and the written deliverables are not started. See [Project status](#project-status).
+> **Status:** Phase 0 (data audit), Phase 1 (exploratory analysis) and Phase 2 (generative models) are complete.
+> Phases 3–4 (validation, seasonal power study) and the written deliverables are not started. See [Project status](#project-status).
 
 ---
 
@@ -51,7 +51,7 @@ uv pip install --python .venv/bin/python -r requirements.txt
 
 ```bash
 # 4. execute the notebooks top to bottom (from the notebooks/ folder)
-cd notebooks && ../.venv/bin/python -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.kernel_name=metagen 01_audit.ipynb 02_eda.ipynb
+cd notebooks && ../.venv/bin/python -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.kernel_name=metagen --ExecutePreprocessor.timeout=1800 01_audit.ipynb 02_eda.ipynb 03_models.ipynb
 ```
 
 Or open them interactively: `.venv/bin/python -m jupyter lab`, choose the kernel **metagen (.venv)**, then
@@ -146,8 +146,12 @@ Sparsity, prevalence vs mean abundance, rank-abundance, **Taylor's law** (mean�
 (richness, Shannon, Simpson), beta diversity (**Bray–Curtis** and **Aitchison**), PCoA coloured by covariates, exploratory
 PERMANOVA with Benjamini–Hochberg correction, pseudocount sensitivity, and a note on compositional data.
 
-### Phase 2 – Generative models (planned)
-Increasing complexity, fitted by maximum likelihood and compared by held-out log-likelihood (K-fold CV) and AIC/BIC where valid:
+### Phase 2 – Generative models (done)
+Increasing complexity, fitted by maximum likelihood and compared by held-out log-likelihood (5-fold CV), AIC/BIC where valid,
+and a likelihood-ratio test for M1 vs M2. Parameter uncertainty by bootstrap over samples. Models are compared on the
+**20 most abundant taxa + `Other` + `Unassigned` (D = 22)**: the logistic-normal likelihood needs a Laplace approximation,
+which is accurate at D = 22 but not at all 114 categories (checked against importance sampling). M0 and M1 are also compared at
+full resolution.
 
 | Model | Idea |
 |---|---|
@@ -182,7 +186,7 @@ analysis plan is written down and frozen before any power result is inspected.**
 | −1 Setup | environment, layout, seed, raw data | done |
 | 0 Audit | `notebooks/01_audit.ipynb`, parser, cleaning, decision table | done |
 | 1 EDA | `notebooks/02_eda.ipynb`, diversity, distances, PCoA, PERMANOVA | done |
-| 2 Models | M0–M3, cross-validation | not started |
+| 2 Models | `notebooks/03_models.ipynb`, M0–M3, cross-validation, bootstrap | done |
 | 3 Validation | simulation vs real, bootstrap | not started |
 | 4 Power study | seasonal scenario | not started |
 | Writing | literature review, report, concept sheet complete | not started (concept sheet covers Phases 0–1) |
@@ -207,6 +211,20 @@ All numbers are produced by the notebooks (`data/processed/eda_summary.csv`).
   Shannon and Simpson are less sensitive to rare taxa.
 - **Distance choice:** the Aitchison distance is stable across pseudocounts 0.1–2 (pairwise Spearman correlation ≥ 0.89).
 
+**Phase 2 – models** (`data/processed/model_comparison.csv`, D = 22 categories):
+
+| Model | Held-out log-likelihood per sample (5-fold CV) | Difference vs M1 |
+|---|---|---|
+| M0 multinomial | −1074 | −1009 |
+| M1 Dirichlet-multinomial | −65.3 ± 1.0 | 0 |
+| **M3 logistic-normal (λ = 0.05)** | **−58.0 ± 0.9** | **+7.3 ± 0.3 (better for 91 % of samples)** |
+
+- **M3 is the best model.** It allows each taxon its own variance and correlations between taxa; the DM forces one common
+  overdispersion (ρ = 0.172, 95 % CI 0.157–0.185, i.e. variance × 173), whereas the data range from × 34 to × 821 across categories.
+- **Covariates (M2) do not improve prediction.** Age, sex and navel type are significant in-sample (likelihood-ratio test p < 10⁻⁴,
+  AIC prefers M2), but BIC prefers M1 and cross-validation shows no gain (+0.04 ± 0.06 nats per sample); adding wash frequency
+  (n = 132) makes it slightly worse. The effects are real but small compared with the differences between people.
+
 ---
 
 ## Repository layout
@@ -222,11 +240,13 @@ data/
 notebooks/
   01_audit.ipynb     # Phase 0
   02_eda.ipynb       # Phase 1
+  03_models.ipynb    # Phase 2
 src/
   config.py          # global seed, paths, rarefaction depth
   parse.py           # taxonomy parser, counts recovery, taxon labelling and aggregation
   clean_env.py       # metadata cleaning with a decision log
   eda.py             # alpha diversity, CLR, Bray-Curtis, Aitchison
+  models.py          # M0-M3: fit, log-likelihood, simulate; Laplace and importance-sampling likelihood for M3
   plotstyle.py       # one figure style, colour-blind-safe (Okabe-Ito) palette
 tests/               # pytest sanity checks
 figures/             # static PNGs of every report figure (300 dpi)
@@ -245,6 +265,9 @@ Files written to `data/processed/`:
 | `filter_sensitivity.csv` | effect of the prevalence threshold |
 | `taxon_label_map.csv` | raw taxonomy row → aggregated label |
 | `eda_summary.csv`, `eda_permanova.csv`, `eda_alpha_tests.csv` | numbers used by the report |
+| `counts_top20.csv` | **modelling matrix**: top 20 taxa + `Other` + `Unassigned` (D = 22), reference column `Other` last |
+| `model_comparison*.csv`, `model_m2_*.csv`, `model_laplace_check.csv` | model comparison, M2 tests and coefficients, Laplace accuracy check |
+| `model_params.npz` | fitted parameters of M0–M3 (used by the validation and power notebooks) |
 
 ---
 

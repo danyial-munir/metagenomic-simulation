@@ -13,7 +13,7 @@ def test_alpha_matches_skbio():
     X = _X()
     assert np.allclose(shannon(X), alpha_diversity("shannon", X).values)
     assert np.allclose(simpson(X), alpha_diversity("simpson", X).values)
-    assert (richness(X) == alpha_diversity("observed_otus", X).values).all()
+    assert (richness(X) == alpha_diversity("sobs", X).values).all()
 
 
 def test_clr_rows_sum_to_zero_and_scale_invariance():

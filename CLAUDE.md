@@ -81,8 +81,8 @@ DataFrame; `pcoa(dm, number_of_dimensions=k)` avoids the "all dimensions" warnin
 ```
 data/raw/            # untouched originals (taxonomy.csv, environment.csv), read-only
 data/processed/      # tidy outputs of the notebooks (CSV), decision/sensitivity tables, eda_*.csv
-notebooks/           # 01_audit.ipynb, 02_eda.ipynb, (later: 03_models, 04_validation, 05_power)
-src/                 # small reusable functions: config, parse, clean_env, eda, plotstyle (later: models, simulate, power)
+notebooks/           # 01_audit.ipynb, 02_eda.ipynb, 03_models.ipynb (later: 04_validation, 05_power)
+src/                 # small reusable functions: config, parse, clean_env, eda, plotstyle, models (later: power)
 tests/               # pytest sanity checks (parser, diversity/CLR, later simulators and power code)
 figures/             # static PNG (300 dpi) of every report figure; some PDF versions optional
 report/              # report source + final PDF (not started)
@@ -153,13 +153,13 @@ plus `assigned_reads`; ID index as string)
 |---|---|---|
 | −1 Setup | venv, layout, seed, raw data copied | done |
 | 0 Audit | `01_audit.ipynb`, `src/parse.py`, `src/clean_env.py`, decision table, missingness map | **done, approved** |
-| 1 EDA | `02_eda.ipynb`, `src/eda.py`; sparsity, rank-abundance, Taylor, alpha/beta, PCoA, PERMANOVA | **done, awaiting approval to start Phase 2** |
-| 2 Models | M0 multinomial, M1 Dirichlet-multinomial, M2 DM/Dirichlet regression with covariates (top K + Other), M3 logistic-normal multinomial; optional M4 zero-inflated only if clearly needed | not started |
+| 1 EDA | `02_eda.ipynb`, `src/eda.py`; sparsity, rank-abundance, Taylor, alpha/beta, PCoA, PERMANOVA | **done, approved** |
+| 2 Models | `03_models.ipynb`, `src/models.py`; M0, M1, M2 (DM regression), M3 (LNM); CV, AIC/BIC, LR test, bootstrap | **done, awaiting approval to start Phase 3** |
 | 3 Validation | simulate from each model, compare with real data, parametric + non-parametric bootstrap, KS/Wasserstein, PERMANOVA real vs simulated, pick final model | not started |
 | 4 Seasonal power | analysis plan frozen **first**; power over (A, n, K, depth, overdispersion); type I error at A = 0; negative control; sensitivity | not started |
 | Writing | literature review, report, README, concept sheet complete, final Restart-and-Run-All | not started |
 
-Rough time left: Phase 2 5–6 d, Phase 3 4 d, Phase 4 5 d, writing 4–5 d, literature review 3 d spread out.
+Rough time left: Phase 3 4 d, Phase 4 5 d, writing 4–5 d, literature review 3 d spread out.
 
 ### Key EDA findings that drive the models
 - **Strong overdispersion:** Taylor slope b = 1.84 (bootstrap 95 % CI 1.82–1.89; multinomial = 1). Every taxon has > 2× the
@@ -170,15 +170,28 @@ Rough time left: Phase 2 5–6 d, Phase 3 4 d, Phase 4 5 d, writing 4–5 d, lit
   Expect covariate effects in M2 to be small; do not oversell them.
 - Aitchison PCoA shows an arch (horseshoe) distortion, not a second biological signal.
 
-## 7. Plan for the remaining phases (analysis decisions already made)
+### Phase 2 decisions and results (done)
+- **Modelling resolution = top 20 taxa + `Other` + `Unassigned` (D = 22)**, file `data/processed/counts_top20.csv`
+  (decision taken with the user). Reason: M3's likelihood needs a Laplace approximation; at D = 114 Laplace and importance
+  sampling (IS) disagree (median 0.9, max 2.5 nats, IS ESS ≈ 5 of 20 000), at D = 22 they agree (median 0.13, max 0.25 nats,
+  ESS > 2000). The 20 taxa carry 78.7 % of reads. **Phases 3 and 4 also work at D = 22**; seasonal taxa come from the top 20.
+  M0 vs M1 are additionally reported at full resolution (114 categories, exact likelihoods).
+- ALR reference = `Other` (most prevalent, 99.6 %), placed as the LAST column. Code convention in `src/models.py`.
+- M3 fit: approximate EM with a Laplace E-step, Σ shrunk towards its diagonal; held-out M3 log-likelihood uses IS (10 000 draws).
+  An ELBO lower bound with the Laplace Gaussian was tried and dropped (too loose, high MC error).
+- **5-fold CV (held-out log-lik per sample, paired SE):** M0 −1074, M1 −65.3, **M3 (λ = 0.05) −58.0; M3 − M1 = +7.3 ± 0.3 nats,
+  M3 better for 91 % of samples.** λ grid 0.005–0.7, curve flat for λ ≤ 0.1 (optimum interior). Min IS ESS on held-out samples 28.
+- M1: A = 4.82 (95 % CI 4.40–5.35), ρ = 0.172 → variance ×173 vs multinomial; empirical ratio per category ranges 34–821 → one
+  common ρ cannot fit; this motivates M3.
+- **M2 (DM regression, covariates on top 10 taxa):** M2a (age, sex, navel; n = 217): LR = 82 on 30 df (p < 1e-4), ΔAIC = −22,
+  ΔBIC = +79, **CV gain 0.04 ± 0.06 nats (none)**. M2b (+ wash frequency; n = 132): LR p = 0.0008, ΔAIC +6, CV −0.12 ± 0.10.
+  8 of 30 bootstrap CIs exclude 1 (1.5 expected by chance); outie effects rest on only 16 outies. Conclusion: covariate effects
+  are detectable in-sample but too small to improve prediction → **final simulator need not include covariates**.
+- Saved for later phases: `model_params.npz` (columns, p0, alpha, mu, Sigma, shrink, M2a theta and covariate scaling),
+  `model_comparison.csv`, `model_comparison_full_resolution.csv`, `model_m2_tests.csv`, `model_m2_coefficients.csv`,
+  `model_laplace_check.csv`.
 
-**Phase 2 — models** (fit by maximum likelihood; MAP/variational only if needed; report parameter uncertainty).
-- Work on counts out of N = 1000 including `Unassigned` (or decide explicitly and document if `Unassigned` is excluded for a model).
-- M0: multinomial with one common probability vector (baseline). M1: Dirichlet-multinomial (DM). M2: DM or Dirichlet
-  regression with covariates on top K + Other. M3: logistic-normal multinomial (Gaussian on additive log-ratios, shrunk or
-  low-rank covariance). M4 only if the data clearly need zero inflation.
-- Compare by **held-out log-likelihood (K-fold CV)** with error bars, and AIC/BIC where valid (state when not valid).
-- Covariate models: complete cases per model, always report n; compare with and without `Wash_Freq`.
+## 7. Plan for the remaining phases (analysis decisions already made)
 
 **Phase 3 — validation.** Simulate datasets with the real design; compare sparsity, richness/Shannon distributions, per-taxon
 prevalence and mean–variance, Bray–Curtis distribution, PCoA overlay. Parametric bootstrap and non-parametric bootstrap over
@@ -202,9 +215,10 @@ Static PNG/PDF in `figures/`; matplotlib for the report, plotly only for explora
 ## 9. Tests (assert-style sanity checks that matter)
 
 Existing: parser (table end, counts exact, richness row identity, aggregation conserves counts), alpha diversity vs
-scikit-bio, CLR rows sum to 0, Aitchison scale invariance. **To add:** simulators (the DM mean and variance match theory),
-model likelihoods (gradient/limit checks, e.g. DM → multinomial as overdispersion → 0), power code (type I error ≈ 0.05 at
-A = 0, within Monte Carlo error). Keep tests small and fast; no frameworks beyond pytest.
+scikit-bio, CLR rows sum to 0, Aitchison scale invariance; models (probabilities sum to 1 over all count vectors, DM →
+multinomial as A → ∞, DM simulator mean/variance match theory, ML fits recover known parameters, M2 analytic gradient vs finite
+differences, LNM Laplace vs importance sampling in low dimension, LNM fit recovers μ and Σ). **To add:** power code (type I
+error ≈ 0.05 at A = 0, within Monte Carlo error). Keep tests small and fast; no frameworks beyond pytest.
 
 ## 10. Literature (to do; verify every reference by searching)
 

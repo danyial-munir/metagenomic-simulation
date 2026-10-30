@@ -52,8 +52,52 @@ Entries are added phase by phase. **Phase 0 entries below.** Empty headings are 
 ### Multiple testing (first use)
 - 12 exploratory alpha tests and 12 PERMANOVAs corrected with Benjamini–Hochberg. BH controls the expected share of false discoveries among the rejections, not the chance of any false positive.
 
-## Phase 2 – models (to do)
-Multinomial, Dirichlet-multinomial, logistic-normal, likelihood, AIC/BIC, cross-validation.
+## Phase 2 – models
+
+### Likelihood and maximum likelihood
+- **Plain language:** the likelihood is the probability the model gives to the data we actually observed, seen as a function of the parameters. Maximum likelihood (ML) picks the parameters that make the observed data most probable.
+- **Formula:** `ℓ(θ) = Σ_i log P(x_i | θ)`; `θ̂ = argmax ℓ(θ)`. We maximise numerically (L-BFGS) with analytic gradients, checked against finite differences in the tests.
+- **Assumptions:** samples independent given θ; the model family contains (approximately) the truth.
+- **What breaks:** if the model is wrong, ML still gives "the best wrong model" (closest in KL divergence); standard errors from the Hessian may then be off, which is one reason we bootstrap.
+- **Questions:** Why the log? (Products → sums; numerically stable; same maximiser.) Why include the multinomial coefficient? (So log-likelihoods of different models are true log-probabilities of the same data and can be compared.)
+
+### Multinomial (M0) vs Dirichlet-multinomial (M1)
+- **M0:** every sample draws its N reads with the same probabilities p. `Var x_j = N p_j(1−p_j)`.
+- **M1:** each sample first draws its own probabilities `p_i ~ Dirichlet(α)`, then its reads. Mean is unchanged, `p_j = α_j/A` with `A = Σα_j`, but `Var x_j = N p_j(1−p_j)·(N+A)/(1+A) = N p_j(1−p_j)[1+(N−1)ρ]` with `ρ = 1/(1+A)`.
+- **Likelihood:** `log P(x|α) = log N! − Σ log x_j! + lnΓ(A) − lnΓ(N+A) + Σ_j [lnΓ(x_j+α_j) − lnΓ(α_j)]`.
+- **Checks in the tests:** probabilities sum to 1 over all count vectors; DM → multinomial as A → ∞; simulated mean and variance match the formulas.
+- **Limitation:** one ρ for all taxa (one common overdispersion factor) and only negative correlations between taxa. The data show overdispersion that varies a lot between taxa, so M1 is expected to be imperfect.
+- **Questions:** What is ρ? (Intra-class correlation: chance that two reads of a sample share their "source"; ρ = 0 is the multinomial.) Why is overdispersion expected biologically? (Real samples differ in composition: people differ.)
+
+### Dirichlet-multinomial regression (M2)
+- `log α_ij = b_j + z_i·β_j` for the top-10 taxa. exp(β_j) multiplies α_j, so it multiplies the expected ratio p_j/p_k to unaffected categories k.
+- Complete cases only; M1 is refitted on exactly the same samples for comparison.
+- **Likelihood-ratio test:** M1 is M2 with all β = 0 (nested), so `LR = 2(ℓ̂_M2 − ℓ̂_M1) ~ χ²_df` under H₀ (Wilks' theorem), df = number of extra parameters. Needs large n and parameters not on the boundary.
+- **Questions:** Why can LR be significant while CV says no gain? (LR tests whether *some* effect exists in-sample; CV asks whether the extra parameters improve prediction of new samples. Small real effects with many parameters can fail to pay for their estimation noise.)
+
+### Logistic-normal multinomial (M3), ALR, Laplace approximation, importance sampling
+- **Model:** `z_i ~ Normal(μ, Σ)` in ALR coordinates `z_j = log(p_j/p_ref)`; `p_i = softmax([z_i, 0])`; reads ~ Multinomial(N, p_i). Σ allows positive *and* negative correlations between taxa and a separate variance per taxon. No pseudocount is needed: zeros are handled by the multinomial step.
+- **Problem:** `p(x) = ∫ Mult(x|softmax z) N(z|μ,Σ) dz` has no closed form.
+- **Laplace approximation:** expand log of the integrand to second order around its maximum ẑ (like the saddle-point method): `log p(x) ≈ f(ẑ) − ½ log det Σ − ½ log det H`, H = curvature at ẑ. Exact for a Gaussian integrand; inaccurate when the integrand is skewed (zero counts make it skewed).
+- **Importance sampling:** `p(x) = E_q[p(x,z)/q(z)]`, estimated by averaging weights over draws from a proposal q. Unbiased for p(x), reliable only when the effective sample size `ESS = (Σw)²/Σw²` is large.
+- **Our finding:** with 114 categories Laplace and IS disagree by several nats and ESS is 2–6 of 20 000 → not trustworthy. At D = 22 they agree within a few tenths of a nat with ESS > 1000. Hence the comparison is done at D = 22 (decision taken together).
+- **Fitting:** approximate EM: E-step = Laplace Gaussian for each sample's z; M-step = update μ and Σ; Σ shrunk towards its diagonal by λ (chosen by CV).
+- **Questions:** Why shrink Σ? (231 covariance parameters from 273 samples: the raw estimate is noisy; shrinkage trades a little bias for much less variance.) Why does the ALR reference not matter for the likelihood? (Changing reference is a linear map of z; Gaussians stay Gaussian. Only the diagonal shrinkage depends on it.)
+
+### AIC, BIC and when they are not valid
+- `AIC = 2k − 2ℓ̂`, `BIC = k ln n − 2ℓ̂`. Lower is better. AIC estimates out-of-sample prediction error; BIC approximates the model evidence and penalises parameters more when n is large.
+- Need an exact maximised likelihood and a well-defined parameter count k: not valid for M3 (approximate likelihood, shrinkage makes the effective k smaller than the nominal one), so M3 is judged by CV only.
+
+### Cross-validation
+- Split samples into 5 folds; fit on 4, score the log-likelihood of the held-out fold; repeat; every sample is scored exactly once by a model that never saw it.
+- Report the mean per sample and the standard error; compare models with **paired** differences on the same samples (removes sample-to-sample variation common to both models).
+- **What breaks:** using the same folds to tune λ and to compare models is slightly optimistic; folds must be split by *subject* (here one sample per subject, so fine).
+- **Questions:** Why not just compare in-sample likelihood? (A bigger model always fits the training data at least as well.) Why 5 folds? (Trade-off: more folds = less bias, more variance and compute.)
+
+### Bootstrap for parameter uncertainty
+- Resample the 273 subjects with replacement, refit, repeat B times; the 2.5 % and 97.5 % percentiles of the refitted values give a 95 % CI.
+- **Assumptions:** subjects are independent and the sample is representative; percentile CIs can be off for strongly skewed or boundary parameters.
+- **Questions:** Why not the Hessian? (Possible: inverse observed Fisher information gives asymptotic SEs; the bootstrap needs no formula and works for derived quantities like ρ = 1/(1+A).) How many replicates? (Enough that the CI endpoints are stable: 500 for M1/M2, 100 for the slower M3.)
 
 ## Phase 3 – validation (to do)
 Parametric and non-parametric bootstrap, KS/Wasserstein, PERMANOVA.
